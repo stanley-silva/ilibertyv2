@@ -19,30 +19,30 @@ export default function Cooperativas() {
       
       {/* SEÇÃO 1: APRESENTAÇÃO (HERO) */}
       <section id="coop-hero" className="relative bg-brand-bg flex items-center justify-center px-6 lg:px-12 py-16 lg:py-24 border-b border-border-subtle z-30 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00AECC06_1px,transparent_1px),linear-gradient(to_bottom,#00AECC06_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-15 opacity-80" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00995D06_1px,transparent_1px),linear-gradient(to_bottom,#00995D06_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-15 opacity-80" />
         
         <div className="absolute inset-0 z-15 opacity-40 pointer-events-none select-none">
-          <svg className="w-full h-full text-brand-cyan/25" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-full h-full text-[#00995D]/25" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M-100 150C250 -50 550 250 850 150C1150 50 1350 350 1600 200" stroke="currentColor" strokeWidth="1.2" strokeDasharray="6 6" />
             <path d="M-50 220C300 20 600 320 900 220C1200 120 1400 420 1650 270" stroke="currentColor" strokeWidth="0.6" />
             
             {/* Nós e conexões pulsantes */}
-            <circle cx="250" cy="80" r="3.5" className="fill-brand-cyan animate-ping" style={{ animationDuration: '3s' }} />
-            <circle cx="250" cy="80" r="2.5" className="fill-brand-cyan" />
+            <circle cx="250" cy="80" r="3.5" className="fill-[#00995D] animate-ping" style={{ animationDuration: '3s' }} />
+            <circle cx="250" cy="80" r="2.5" className="fill-[#00995D]" />
             
             <circle cx="850" cy="150" r="4.5" className="fill-brand-blue animate-ping" style={{ animationDuration: '4s' }} />
             <circle cx="850" cy="150" r="3" className="fill-brand-blue" />
             
-            <circle cx="1150" cy="85" r="3.5" className="fill-brand-cyan animate-ping" style={{ animationDuration: '2.5s' }} />
-            <circle cx="1150" cy="85" r="2.5" className="fill-brand-cyan" />
+            <circle cx="1150" cy="85" r="3.5" className="fill-[#00995D] animate-ping" style={{ animationDuration: '2.5s' }} />
+            <circle cx="1150" cy="85" r="2.5" className="fill-[#00995D]" />
           </svg>
         </div>
 
         {/* Partículas flutuantes ambientais */}
         <div className="absolute inset-0 z-15 pointer-events-none overflow-hidden select-none">
-          <div className="absolute top-[20%] left-[15%] w-1.5 h-1.5 bg-brand-cyan/40 rounded-full animate-pulse" />
+          <div className="absolute top-[20%] left-[15%] w-1.5 h-1.5 bg-[#00995D]/40 rounded-full animate-pulse" />
           <div className="absolute bottom-[25%] left-[45%] w-2 h-2 bg-brand-blue/30 rounded-full animate-pulse" />
-          <div className="absolute top-[40%] right-[35%] w-1 h-1 bg-brand-cyan/50 rounded-full animate-pulse" />
+          <div className="absolute top-[40%] right-[35%] w-1 h-1 bg-[#00995D]/50 rounded-full animate-pulse" />
         </div>
 
         {/* Content grid */}
@@ -50,7 +50,7 @@ export default function Cooperativas() {
           
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <FadeIn delay={150}>
-              <span className="inline-block text-xs uppercase tracking-widest font-bold text-brand-dark mb-5 border-l-2 border-brand-cyan pl-3">
+              <span className="inline-block text-xs uppercase tracking-widest font-bold text-brand-dark mb-5 border-l-2 border-[#00995D] pl-3">
                 Cooperativas & Hospitais
               </span>
             </FadeIn>
@@ -59,7 +59,7 @@ export default function Cooperativas() {
               <h1 className="font-sans font-bold text-brand-dark leading-[1.08] tracking-[-0.03em]"
                 style={{ fontSize: 'clamp(2.3rem, 5.5vw, 60px)', color: '#001E38' }}>
                 Integração, Eficiência e<br />
-                <span className="text-brand-cyan">Governança de Dados para Operadoras.</span>
+                <span className="text-[#00995D]">Governança de Dados para Operadoras.</span>
               </h1>
             </FadeIn>
 
@@ -74,7 +74,7 @@ export default function Cooperativas() {
                 <CtaButton
                   text="Fale com um Consultor Especialista"
                   to="/contato"
-                  variant="primary"
+                  variant="green"
                 />
               </div>
             </FadeIn>
@@ -93,12 +93,12 @@ export default function Cooperativas() {
 
               {/* Emblema flutuante de conectividade */}
               <div className="absolute top-1/2 -translate-y-1/2 -left-4 lg:-left-8 z-20">
-                <div className="bg-white/90 backdrop-blur-md border border-brand-cyan/20 p-4 rounded-[12px] shadow-xl flex items-center gap-4 max-w-[220px] animate-float-slow transition-all hover:scale-105 duration-300">
-                  <div className="w-10 h-10 rounded-full bg-brand-cyan/15 flex items-center justify-center text-brand-cyan font-bold text-lg shadow-sm">
+                <div className="bg-white/90 backdrop-blur-md border border-[#00995D]/20 p-4 rounded-[12px] shadow-xl flex items-center gap-4 max-w-[220px] animate-float-slow transition-all hover:scale-105 duration-300">
+                  <div className="w-10 h-10 rounded-full bg-[#00995D]/15 flex items-center justify-center text-[#00995D] font-bold text-lg shadow-sm">
                     ✓
                   </div>
                   <div className="text-left">
-                    <p className="text-[10px] uppercase font-bold tracking-widest text-[#00AECC]">Conectividade</p>
+                    <p className="text-[10px] uppercase font-bold tracking-widest text-[#00995D]">Conectividade</p>
                     <p className="text-xs font-bold text-[#001E38] font-sans">100% Integrado</p>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function Cooperativas() {
       <section id="coop-dores" className="py-20 lg:py-28 bg-white px-6 lg:px-12 border-b border-border-subtle/50">
         <div className="max-w-[1440px] mx-auto">
           <FadeIn delay={100}>
-            <Badge number="1" text="O Diagnóstico" />
+            <Badge number="1" text="O Diagnóstico" themeColor="green" />
           </FadeIn>
 
           <FadeIn delay={200}>
@@ -129,7 +129,7 @@ export default function Cooperativas() {
             <FadeIn delay={300} className="flex">
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
-                  <div className="w-12 h-12 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
+                  <div className="w-12 h-12 rounded-full bg-[#00995D]/10 text-[#00995D] flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
                     <Network className="w-5 h-5" />
                   </div>
                   <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
@@ -145,7 +145,7 @@ export default function Cooperativas() {
             <FadeIn delay={400} className="flex">
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
-                  <div className="w-12 h-12 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
+                  <div className="w-12 h-12 rounded-full bg-[#00995D]/10 text-[#00995D] flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
                     <AlertTriangle className="w-5 h-5" />
                   </div>
                   <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
@@ -161,7 +161,7 @@ export default function Cooperativas() {
             <FadeIn delay={500} className="flex">
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
-                  <div className="w-12 h-12 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
+                  <div className="w-12 h-12 rounded-full bg-[#00995D]/10 text-[#00995D] flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
                     <ShieldAlert className="w-5 h-5" />
                   </div>
                   <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
@@ -182,7 +182,7 @@ export default function Cooperativas() {
       <section id="coop-solucoes" className="py-20 lg:py-28 bg-[#F2F4F8] px-6 lg:px-12 border-b border-border-subtle/50">
         <div className="max-w-[1440px] mx-auto">
           <FadeIn delay={100}>
-            <Badge number="2" text="Áreas de Atuação" />
+            <Badge number="2" text="Áreas de Atuação" themeColor="green" />
           </FadeIn>
 
           <FadeIn delay={200}>
@@ -197,7 +197,7 @@ export default function Cooperativas() {
             <FadeIn delay={300} className="flex">
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
-                  <div className="w-12 h-12 bg-brand-cyan/10 text-brand-cyan flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
+                  <div className="w-12 h-12 bg-[#00995D]/10 text-[#00995D] flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
                     <Activity className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
@@ -213,7 +213,7 @@ export default function Cooperativas() {
             <FadeIn delay={400} className="flex">
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
-                  <div className="w-12 h-12 bg-brand-cyan/10 text-brand-cyan flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
+                  <div className="w-12 h-12 bg-[#00995D]/10 text-[#00995D] flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
                     <Scissors className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
@@ -229,7 +229,7 @@ export default function Cooperativas() {
             <FadeIn delay={500} className="flex">
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
-                  <div className="w-12 h-12 bg-brand-cyan/10 text-brand-cyan flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
+                  <div className="w-12 h-12 bg-[#00995D]/10 text-[#00995D] flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
                     <BarChart2 className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
@@ -253,7 +253,7 @@ export default function Cooperativas() {
             
             <div className="lg:col-span-6 flex flex-col gap-4 text-left">
               <FadeIn delay={100}>
-                <Badge number="3" text="Prova de Conceito" />
+                <Badge number="3" text="Prova de Conceito" themeColor="green" />
               </FadeIn>
 
               <FadeIn delay={200}>
@@ -265,7 +265,7 @@ export default function Cooperativas() {
                   <p>
                     No projeto desenvolvido para a <strong className="text-brand-dark font-semibold">Unimed Avaré</strong>, o método iLiberty mapeou com profundidade a operation, fornecendo diagnóstico detalhado e subsídios cruciais antes de qualquer implementação de código.
                   </p>
-                  <p className="border-l-4 border-brand-cyan pl-5 bg-brand-bg/30 py-3 pr-4 rounded-r-[4px] font-medium">
+                  <p className="border-l-4 border-[#00995D] pl-5 bg-brand-bg/30 py-3 pr-4 rounded-r-[4px] font-medium">
                     Nossa equipe estruturou a integração total de dados e reconciliou fluxos operacionais, fornecendo segurança corporativa máxima para as tomadas de decisões financeiras e de governança operacional de saúde da cooperativa.
                   </p>
                 </div>
@@ -276,20 +276,20 @@ export default function Cooperativas() {
                 <FadeIn delay={300}>
                   <div className="bg-white border border-border-subtle rounded-[6px] p-6 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-300">
                     <div>
-                      <p className="text-brand-cyan text-4xl font-bold font-sans">+20</p>
+                      <p className="text-[#00995D] text-4xl font-bold font-sans">+20</p>
                       <p className="text-[10px] uppercase tracking-wider font-bold text-text-secondary mt-1">Áreas Analisadas</p>
                     </div>
-                    <span className="text-[10px] text-brand-cyan font-bold border border-brand-cyan/20 px-2 py-0.5 bg-brand-cyan/5 rounded uppercase">Mapeamento</span>
+                    <span className="text-[10px] text-[#00995D] font-bold border border-[#00995D]/20 px-2 py-0.5 bg-[#00995D]/5 rounded uppercase">Mapeamento</span>
                   </div>
                 </FadeIn>
 
                 <FadeIn delay={400}>
                   <div className="bg-white border border-border-subtle rounded-[6px] p-6 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-300">
                     <div>
-                      <p className="text-brand-cyan text-4xl font-bold font-sans">+57</p>
+                      <p className="text-[#00995D] text-4xl font-bold font-sans">+57</p>
                       <p className="text-[10px] uppercase tracking-wider font-bold text-text-secondary mt-1">Processos Mapeados</p>
                     </div>
-                    <span className="text-[10px] text-brand-cyan font-bold border border-brand-cyan/20 px-2 py-0.5 bg-brand-cyan/5 rounded uppercase">Metrificados</span>
+                    <span className="text-[10px] text-[#00995D] font-bold border border-[#00995D]/20 px-2 py-0.5 bg-[#00995D]/5 rounded uppercase">Metrificados</span>
                   </div>
                 </FadeIn>
 
@@ -297,9 +297,9 @@ export default function Cooperativas() {
             </div>
 
             <div className="lg:col-span-6 relative">
-              <div className="absolute -inset-6 bg-gradient-to-r from-brand-cyan/20 to-brand-blue/20 rounded-[24px] blur-3xl opacity-80 -z-10 animate-pulse" />
+              <div className="absolute -inset-6 bg-gradient-to-r from-[#00995D]/20 to-brand-blue/20 rounded-[24px] blur-3xl opacity-80 -z-10 animate-pulse" />
               
-              <div className="absolute -top-6 -left-6 w-32 h-32 text-brand-cyan/20 -z-10">
+              <div className="absolute -top-6 -left-6 w-32 h-32 text-[#00995D]/20 -z-10">
                 <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <pattern id="case-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -335,13 +335,13 @@ export default function Cooperativas() {
             
             <div className="lg:col-span-5 flex flex-col items-start text-left gap-5">
               <FadeIn delay={100}>
-                <span className="text-[#00AECC] uppercase text-xs tracking-[0.2em] font-bold block">
+                <span className="text-[#00995D] uppercase text-xs tracking-[0.2em] font-bold block">
                   [ Próximo Passo ]
                 </span>
               </FadeIn>
 
               <FadeIn delay={200}>
-                <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-[#00AECC] pl-5"
+                <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-[#00995D] pl-5"
                   style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#001E38' }}>
                   Reduza custos operacionais com governança e automação inteligente.
                 </h2>
@@ -359,7 +359,7 @@ export default function Cooperativas() {
                 <div className="bg-[#F2F4F8]/80 border border-border-subtle/50 p-6 sm:p-10 rounded-[16px] w-full shadow-xs">
                   {submitted ? (
                     <div className="text-center py-10 flex flex-col items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center text-3xl font-bold animate-[bounce_1s_infinite]">
+                      <div className="w-16 h-16 rounded-full bg-[#00995D]/10 text-[#00995D] flex items-center justify-center text-3xl font-bold animate-[bounce_1s_infinite]">
                         ✓
                       </div>
                       <h3 className="font-sans font-bold text-[#001E38] text-xl">Diagnóstico Solicitado!</h3>
@@ -371,6 +371,7 @@ export default function Cooperativas() {
                     <ContactForm 
                       buttonText="Transformar a Operação da minha Cooperativa" 
                       onSubmitSuccess={() => setSubmitted(true)} 
+                      themeColor="green"
                     />
                   )}
                 </div>

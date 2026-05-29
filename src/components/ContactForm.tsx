@@ -15,12 +15,14 @@ export interface ContactFormProps {
   buttonText?: string;
   onSubmitSuccess: (values: ContactFormValues) => void;
   isLoading?: boolean;
+  themeColor?: 'cyan' | 'green';
 }
 
 export default function ContactForm({
   buttonText = 'ENVIAR SOLICITAÇÃO E AGENDAR REUNIÃO',
   onSubmitSuccess,
-  isLoading = false
+  isLoading = false,
+  themeColor = 'cyan'
 }: ContactFormProps) {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -45,6 +47,10 @@ export default function ContactForm({
     }
   };
 
+  const focusClass = themeColor === 'green'
+    ? 'focus:border-[#00995D] focus:ring-[#00995D]'
+    : 'focus:border-brand-cyan focus:ring-brand-cyan';
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5 text-left w-full relative z-10">
       
@@ -60,7 +66,7 @@ export default function ContactForm({
           value={nome}
           onChange={(e) => setNome(e.target.value)}
           placeholder="Digite seu nome completo"
-          className="w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans"
+          className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans ${focusClass}`}
         />
       </div>
 
@@ -77,7 +83,7 @@ export default function ContactForm({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="exemplo@corporativo.com"
-            className="w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans"
+            className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans ${focusClass}`}
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -91,7 +97,7 @@ export default function ContactForm({
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="(00) 00000-0000"
-            className="w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans"
+            className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans ${focusClass}`}
           />
         </div>
       </div>
@@ -109,7 +115,7 @@ export default function ContactForm({
             value={empresa}
             onChange={(e) => setEmpresa(e.target.value)}
             placeholder="Razão Social / Singular / Unidade"
-            className="w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans"
+            className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans ${focusClass}`}
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -121,7 +127,7 @@ export default function ContactForm({
             required
             value={segmento}
             onChange={(e) => setSegmento(e.target.value)}
-            className="w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-brand-dark transition-all duration-200 appearance-none font-sans cursor-pointer bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23606266%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem] bg-[right_1rem_center] bg-no-repeat pr-10"
+            className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 appearance-none font-sans cursor-pointer bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23606266%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem] bg-[right_1rem_center] bg-no-repeat pr-10 ${focusClass}`}
           >
             <option value="" disabled hidden>Selecione seu segmento</option>
             <option value="Cooperativa de Saúde / Unimed">Cooperativa de Saúde / Singular Unimed</option>
@@ -142,7 +148,7 @@ export default function ContactForm({
           required
           value={porte}
           onChange={(e) => setPorte(e.target.value)}
-          className="w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-brand-dark transition-all duration-200 appearance-none font-sans cursor-pointer bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23606266%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem] bg-[right_1rem_center] bg-no-repeat pr-10"
+          className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 appearance-none font-sans cursor-pointer bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23606266%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem] bg-[right_1rem_center] bg-no-repeat pr-10 ${focusClass}`}
         >
           <option value="" disabled hidden>Selecione o volume diário</option>
           <option value="Até 500 exames/procedimentos por dia">Até 500 exames ou procedimentos diários</option>
@@ -162,7 +168,7 @@ export default function ContactForm({
           onChange={(e) => setDesafio(e.target.value)}
           placeholder="Descreva brevemente os principais desafios ou ineficiências em seus fluxos operacionais (opcional)"
           rows={3}
-          className="w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans resize-none"
+          className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 placeholder:text-text-secondary/40 font-sans resize-none ${focusClass}`}
         />
       </div>
 
@@ -170,7 +176,7 @@ export default function ContactForm({
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full mt-3 bg-[#00AECC] hover:bg-[#009cb7] disabled:bg-[#00AECC]/60 active:scale-[0.99] text-white font-sans font-bold py-4 rounded-[6px] transition-all flex items-center justify-center gap-2.5 text-sm uppercase tracking-wider cursor-pointer shadow-sm hover:shadow-md"
+        className={`w-full mt-3 active:scale-[0.99] text-white font-sans font-bold py-4 rounded-[6px] transition-all flex items-center justify-center gap-2.5 text-sm uppercase tracking-wider cursor-pointer shadow-sm hover:shadow-md ${themeColor === 'green' ? 'bg-[#00995D] hover:bg-[#00804e] disabled:bg-[#00995D]/60' : 'bg-[#00AECC] hover:bg-[#009cb7] disabled:bg-[#00AECC]/60'}`}
       >
         {isLoading ? (
           <>

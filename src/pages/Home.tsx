@@ -272,14 +272,14 @@ export default function Home() {
                       className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                     />
                   </div>
-                  <div className="bg-brand-cyan px-6 py-4 flex items-center justify-between">
+                  <div className="bg-[#00995D] px-6 py-4 flex items-center justify-between">
                     <h3 className="text-base sm:text-md font-bold text-white font-sans text-left uppercase tracking-wider">
                       Cooperativas de Saúde & Hospitais
                     </h3>
                   </div>
                   <div className="p-6 sm:p-8 flex flex-col gap-5 text-left">
                     <div>
-                      <p className="text-[10px] uppercase font-bold tracking-widest text-brand-cyan mb-1.5 font-sans">Gargalo</p>
+                      <p className="text-[10px] uppercase font-bold tracking-widest text-[#00995D] mb-1.5 font-sans">Gargalo</p>
                       <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">Desconexão de sistemas, auditorias lentas e falta de previsibilidade de custos operacionais.</p>
                     </div>
                     <div className="border-b border-border-subtle/50" />
@@ -293,7 +293,7 @@ export default function Home() {
                 <div className="px-6 sm:px-8 pb-8 flex text-left">
                   <Link
                     to="/cooperativas"
-                    className="inline-flex items-center justify-center border border-brand-cyan text-brand-cyan px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-brand-cyan hover:text-white transition-all duration-300 self-start"
+                    className="inline-flex items-center justify-center border border-[#00995D] text-[#00995D] px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-[#00995D] hover:text-white transition-all duration-300 self-start"
                   >
                     <span>Otimizar minha Operação</span>
                     <span className="ml-2 font-black">➔</span>

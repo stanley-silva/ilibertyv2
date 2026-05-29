@@ -6,7 +6,7 @@ interface CtaButtonProps {
   text: string;
   to?: string;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'blue';
+  variant?: 'primary' | 'secondary' | 'blue' | 'green';
   icon?: LucideIcon;
   className?: string;
   id?: string;
@@ -23,12 +23,14 @@ export default function CtaButton({
 }: CtaButtonProps) {
   const bgClass = 
     variant === 'primary' ? 'bg-transparent border-brand-cyan text-brand-cyan hover:bg-brand-cyan hover:text-white' : 
+    variant === 'green' ? 'bg-transparent border-[#00995D] text-[#00995D] hover:bg-[#00995D] hover:text-white' :
     variant === 'blue' ? 'bg-transparent border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white' :
     'bg-transparent border-text-secondary text-text-secondary hover:bg-text-secondary hover:text-white';
   const textClass = '';
   const iconBgClass = 'bg-transparent';
   const iconColorClass = 
     variant === 'primary' ? 'text-brand-cyan group-hover:text-white' : 
+    variant === 'green' ? 'text-[#00995D] group-hover:text-white' : 
     variant === 'blue' ? 'text-brand-blue group-hover:text-white' : 
     'text-text-secondary group-hover:text-white';
 
