@@ -28,6 +28,35 @@ export default function Home() {
 
   const activeDot = ((currentIndex - 5) % 5 + 5) % 5;
 
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    
+    if (isLeftSwipe) {
+      setTransitionEnabled(true);
+      setCurrentIndex((prev) => prev + 1);
+      setAutoplayKey((prev) => prev + 1);
+    } else if (isRightSwipe) {
+      setTransitionEnabled(true);
+      setCurrentIndex((prev) => prev - 1);
+      setAutoplayKey((prev) => prev + 1);
+    }
+  };
+
   useEffect(() => {
     const updateVisibleCount = () => {
       if (window.innerWidth >= 1024) {
@@ -127,9 +156,9 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={300}>
-              <h1 className="font-sans font-bold text-brand-dark leading-[1.08] tracking-[-0.03em]"
+              <h1 className="font-sans font-bold text-brand-dark leading-tight sm:leading-[1.08] tracking-[-0.03em]"
                 style={{ fontSize: 'clamp(2.3rem, 6vw, 64px)' }}>
-                Simplificamos o que trava.<br />
+                Simplificamos o que trava.<br className="hidden sm:inline" />
                 <span className="text-brand-cyan">Aceleramos o que importa.</span>
               </h1>
             </FadeIn>
@@ -367,7 +396,12 @@ export default function Home() {
           </div>
 
           {/* Carrossel de logotipos deslizantes */}
-          <div className="overflow-hidden w-full mt-8 py-4 -my-4 relative select-none">
+          <div 
+            className="overflow-hidden w-full mt-8 py-4 -my-4 relative select-none touch-pan-y"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div
               className={`flex w-full ${transitionEnabled ? 'transition-transform duration-700 ease-in-out' : ''}`}
               style={{
