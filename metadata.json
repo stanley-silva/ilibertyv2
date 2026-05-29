@@ -1,0 +1,6 @@
+{
+  "name": "iLiberty Tecnologia",
+  "description": "Site institucional completo para cooperativas de saúde, hospitais e laboratórios de diagnóstico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

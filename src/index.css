@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Cabin', sans-serif;
+  --font-cabin: 'Cabin', sans-serif;
+
+  /* Brand semantic design tokens */
+  --color-brand-cyan: #00AECC;
+  --color-brand-cyan-hover: #009cb7;
+  --color-brand-blue: #2575FC;
+  --color-brand-dark: #001E38;
+  --color-brand-bg: #F2F4F8;
+  --color-text-primary: #333333;
+  --color-text-secondary: #606266;
+  --color-border-subtle: #DBDBDB;
+}
+
+body {
+  font-family: 'Cabin', sans-serif;
+  font-size: 17.6px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+/* Glassmorphism effects */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.liquid-glass-strong {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Animations and custom rules */
+@keyframes text-roll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+

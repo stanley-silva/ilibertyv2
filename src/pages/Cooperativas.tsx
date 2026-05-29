@@ -1,0 +1,386 @@
+import React, { useState } from 'react';
+import { Network, AlertTriangle, ShieldAlert, Activity, Scissors, BarChart2, Send } from 'lucide-react';
+import CtaButton from '../components/CtaButton';
+import Badge from '../components/Badge';
+import FadeIn from '../components/FadeIn';
+import useSeo from '../hooks/useSeo';
+import ContactForm from '../components/ContactForm';
+
+export default function Cooperativas() {
+  const [submitted, setSubmitted] = useState(false);
+
+  useSeo({
+    title: 'TI para Cooperativas de Saúde e Hospitais',
+    description: 'Integração de sistemas legados, governança de dados assistenciais, conciliação e redução de glosas para Unimeds e grandes hospitais. Veja nosso caso de sucesso.'
+  });
+
+  return (
+    <div id="cooperativas-page" className="w-full pt-20 bg-white">
+      
+      {/* SEÇÃO 1: APRESENTAÇÃO (HERO) */}
+      <section id="coop-hero" className="relative bg-brand-bg flex items-center justify-center px-6 lg:px-12 py-16 lg:py-24 border-b border-border-subtle z-30 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00AECC06_1px,transparent_1px),linear-gradient(to_bottom,#00AECC06_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-15 opacity-80" />
+        
+        <div className="absolute inset-0 z-15 opacity-40 pointer-events-none select-none">
+          <svg className="w-full h-full text-brand-cyan/25" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-100 150C250 -50 550 250 850 150C1150 50 1350 350 1600 200" stroke="currentColor" strokeWidth="1.2" strokeDasharray="6 6" />
+            <path d="M-50 220C300 20 600 320 900 220C1200 120 1400 420 1650 270" stroke="currentColor" strokeWidth="0.6" />
+            
+            {/* Nós e conexões pulsantes */}
+            <circle cx="250" cy="80" r="3.5" className="fill-brand-cyan animate-ping" style={{ animationDuration: '3s' }} />
+            <circle cx="250" cy="80" r="2.5" className="fill-brand-cyan" />
+            
+            <circle cx="850" cy="150" r="4.5" className="fill-brand-blue animate-ping" style={{ animationDuration: '4s' }} />
+            <circle cx="850" cy="150" r="3" className="fill-brand-blue" />
+            
+            <circle cx="1150" cy="85" r="3.5" className="fill-brand-cyan animate-ping" style={{ animationDuration: '2.5s' }} />
+            <circle cx="1150" cy="85" r="2.5" className="fill-brand-cyan" />
+          </svg>
+        </div>
+
+        {/* Partículas flutuantes ambientais */}
+        <div className="absolute inset-0 z-15 pointer-events-none overflow-hidden select-none">
+          <div className="absolute top-[20%] left-[15%] w-1.5 h-1.5 bg-brand-cyan/40 rounded-full animate-pulse" />
+          <div className="absolute bottom-[25%] left-[45%] w-2 h-2 bg-brand-blue/30 rounded-full animate-pulse" />
+          <div className="absolute top-[40%] right-[35%] w-1 h-1 bg-brand-cyan/50 rounded-full animate-pulse" />
+        </div>
+
+        {/* Content grid */}
+        <div className="relative z-20 max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            <FadeIn delay={150}>
+              <span className="inline-block text-xs uppercase tracking-widest font-bold text-brand-dark mb-5 border-l-2 border-brand-cyan pl-3">
+                Cooperativas & Hospitais
+              </span>
+            </FadeIn>
+
+            <FadeIn delay={300}>
+              <h1 className="font-sans font-bold text-brand-dark leading-[1.08] tracking-[-0.03em]"
+                style={{ fontSize: 'clamp(2.3rem, 5.5vw, 60px)', color: '#001E38' }}>
+                Integração, Eficiência e<br />
+                <span className="text-brand-cyan">Governança de Dados para Operadoras.</span>
+              </h1>
+            </FadeIn>
+
+            <FadeIn delay={450}>
+              <p className="text-text-secondary text-base sm:text-[18px] leading-[1.7] mt-6 max-w-2xl font-sans font-medium">
+                Conectamos sistemas isolados, automatizamos fluxos assistenciais e eliminamos o retrabalho manual que infla os custos operacionais de cooperativas de saúde e hospitais.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={600} className="w-full">
+              <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+                <CtaButton
+                  text="Fale com um Consultor Especialista"
+                  to="/contato"
+                  variant="primary"
+                />
+              </div>
+            </FadeIn>
+          </div>
+
+          <div className="lg:col-span-5 w-full flex justify-center lg:justify-end relative">
+            <div className="w-full max-w-[440px] lg:max-w-none relative aspect-[4/3] flex items-center justify-center">
+              
+              <div className="relative z-10 w-full h-full rounded-tl-[100px] rounded-br-[100px] rounded-tr-none rounded-bl-none overflow-hidden border border-border-subtle/30 shadow-lg">
+                <img
+                  src="/assets/cooperativas_e_hospitais_secao01.webp"
+                  alt="Cooperativas de Saúde & Hospitais"
+                  className="w-full h-full object-cover rounded-tl-[100px] rounded-br-[100px] rounded-tr-none rounded-bl-none transition-transform duration-750 hover:scale-103"
+                />
+              </div>
+
+              {/* Emblema flutuante de conectividade */}
+              <div className="absolute top-1/2 -translate-y-1/2 -left-4 lg:-left-8 z-20">
+                <div className="bg-white/90 backdrop-blur-md border border-brand-cyan/20 p-4 rounded-[12px] shadow-xl flex items-center gap-4 max-w-[220px] animate-float-slow transition-all hover:scale-105 duration-300">
+                  <div className="w-10 h-10 rounded-full bg-brand-cyan/15 flex items-center justify-center text-brand-cyan font-bold text-lg shadow-sm">
+                    ✓
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[10px] uppercase font-bold tracking-widest text-[#00AECC]">Conectividade</p>
+                    <p className="text-xs font-bold text-[#001E38] font-sans">100% Integrado</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* SEÇÃO 2: DORES OPERACIONAIS E GARGALOS */}
+      <section id="coop-dores" className="py-20 lg:py-28 bg-white px-6 lg:px-12 border-b border-border-subtle/50">
+        <div className="max-w-[1440px] mx-auto">
+          <FadeIn delay={100}>
+            <Badge number="1" text="O Diagnóstico" />
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <h2 className="font-sans font-bold text-brand-dark tracking-[-0.02em] leading-tight mb-16 text-left"
+              style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)', color: '#001E38' }}>
+              Sabemos exatamente o que tira o sono da Diretoria Executiva
+            </h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <FadeIn delay={300} className="flex">
+              <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
+                <div className="text-left">
+                  <div className="w-12 h-12 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
+                    <Network className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
+                    Sistemas Desconectados
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                    O ERP não conversa perfeitamente com o prontuário dos pacientes, que por sua vez não se integra ao faturamento e à auditoria médica, fragmentando a governança.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={400} className="flex">
+              <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
+                <div className="text-left">
+                  <div className="w-12 h-12 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
+                    <AlertTriangle className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
+                    Gargalos Invisíveis
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                    Processos gerenciais e assistenciais de alta complexidade dependem inteiramente de check-lists e planilhas manuais geridas por equipes dispersas.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={500} className="flex">
+              <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
+                <div className="text-left">
+                  <div className="w-12 h-12 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
+                    <ShieldAlert className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
+                    Risco de Glosa e Fraude
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                    Falta de rastreabilidade de ponta a ponta e lentidão no cruzamento de dados gerenciais levam a vazamentos financeiros operacionais constantes e glosas inevitáveis.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 3: ÁREAS DE SOLUÇÃO EM SAÚDE */}
+      <section id="coop-solucoes" className="py-20 lg:py-28 bg-[#F2F4F8] px-6 lg:px-12 border-b border-border-subtle/50">
+        <div className="max-w-[1440px] mx-auto">
+          <FadeIn delay={100}>
+            <Badge number="2" text="Áreas de Atuação" />
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <h2 className="font-sans font-bold text-brand-dark tracking-[-0.02em] leading-tight mb-16 text-left"
+              style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)', color: '#001E38' }}>
+              Não vendemos apenas código, organizamos a sua casa.
+            </h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <FadeIn delay={300} className="flex">
+              <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
+                <div className="text-left">
+                  <div className="w-12 h-12 bg-brand-cyan/10 text-brand-cyan flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
+                    <Activity className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
+                    Oncologia & Terapias Complexas
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                    Otimização estratégica do fluxo assistencial, diminuindo sensivelmente o tempo para a liberação de terapias oncológicas e tratamentos complexos, garantindo a eliminação de desperdícios em medicamentos e kits de alto custo.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={400} className="flex">
+              <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
+                <div className="text-left">
+                  <div className="w-12 h-12 bg-brand-cyan/10 text-brand-cyan flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
+                    <Scissors className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
+                    Centro Cirúrgico & OPME
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                    Mapeamos gargalos de eficiência, melhoramos a previsibilidade e a ocupação das salas cirúrgicas e implementamos controle integrado com rastreabilidade total de material cirúrgico de órteses, próteses e materiais especiais conectados diretamente com as auditorias.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={500} className="flex">
+              <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
+                <div className="text-left">
+                  <div className="w-12 h-12 bg-brand-cyan/10 text-brand-cyan flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
+                    <BarChart2 className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
+                    Financeiro & Controladoria
+                  </h3>
+                  <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                    Automação integrada de processos de faturamento, conciliações bancárias complexas, auditorias de prestadores adicionados e geração em tempo real de painéis estratégicos de governança e tomadas de decisão.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 4: ESTUDO DE CASO DE SUCESSO (UNIMED AVARÉ) */}
+      <section id="coop-caso" className="py-20 lg:py-28 bg-white px-6 lg:px-12 border-b border-border-subtle/50">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <div className="lg:col-span-6 flex flex-col gap-4 text-left">
+              <FadeIn delay={100}>
+                <Badge number="3" text="Prova de Conceito" />
+              </FadeIn>
+
+              <FadeIn delay={200}>
+                <h2 className="text-brand-dark font-sans font-bold leading-tight mb-2"
+                  style={{ fontSize: 'clamp(1.75rem, 3.8vw, 2.8rem)', color: '#001E38' }}>
+                  Metodologia Aplicada na Unimed Avaré
+                </h2>
+                <div className="space-y-4 text-[17.6px] text-text-secondary leading-relaxed font-sans font-normal">
+                  <p>
+                    No projeto desenvolvido para a <strong className="text-brand-dark font-semibold">Unimed Avaré</strong>, o método iLiberty mapeou com profundidade a operation, fornecendo diagnóstico detalhado e subsídios cruciais antes de qualquer implementação de código.
+                  </p>
+                  <p className="border-l-4 border-brand-cyan pl-5 bg-brand-bg/30 py-3 pr-4 rounded-r-[4px] font-medium">
+                    Nossa equipe estruturou a integração total de dados e reconciliou fluxos operacionais, fornecendo segurança corporativa máxima para as tomadas de decisões financeiras e de governança operacional de saúde da cooperativa.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                
+                <FadeIn delay={300}>
+                  <div className="bg-white border border-border-subtle rounded-[6px] p-6 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-300">
+                    <div>
+                      <p className="text-brand-cyan text-4xl font-bold font-sans">+20</p>
+                      <p className="text-[10px] uppercase tracking-wider font-bold text-text-secondary mt-1">Áreas Analisadas</p>
+                    </div>
+                    <span className="text-[10px] text-brand-cyan font-bold border border-brand-cyan/20 px-2 py-0.5 bg-brand-cyan/5 rounded uppercase">Mapeamento</span>
+                  </div>
+                </FadeIn>
+
+                <FadeIn delay={400}>
+                  <div className="bg-white border border-border-subtle rounded-[6px] p-6 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-300">
+                    <div>
+                      <p className="text-brand-cyan text-4xl font-bold font-sans">+57</p>
+                      <p className="text-[10px] uppercase tracking-wider font-bold text-text-secondary mt-1">Processos Mapeados</p>
+                    </div>
+                    <span className="text-[10px] text-brand-cyan font-bold border border-brand-cyan/20 px-2 py-0.5 bg-brand-cyan/5 rounded uppercase">Metrificados</span>
+                  </div>
+                </FadeIn>
+
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 relative">
+              <div className="absolute -inset-6 bg-gradient-to-r from-brand-cyan/20 to-brand-blue/20 rounded-[24px] blur-3xl opacity-80 -z-10 animate-pulse" />
+              
+              <div className="absolute -top-6 -left-6 w-32 h-32 text-brand-cyan/20 -z-10">
+                <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="case-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                      <circle cx="2" cy="2" r="1.5" fill="currentColor" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#case-dots)" />
+                </svg>
+              </div>
+
+              <div className="flex flex-col gap-6">
+                <FadeIn delay={300}>
+                  <div className="relative group overflow-hidden rounded-[24px]">
+                    <img
+                      id="case-study-showcase-img"
+                      src="/assets/unimed_avare.webp"
+                      alt="Healthcare dynamic analytics and dashboard"
+                      className="w-full h-auto object-contain rounded-[24px] transition-transform duration-750 group-hover:scale-102"
+                    />
+                  </div>
+                </FadeIn>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 5: CONVERSÃO FINAL (CTA) */}
+      <section id="coop-cta" className="py-24 bg-white px-6 lg:px-12 relative z-40 border-t border-border-subtle/35">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <div className="lg:col-span-5 flex flex-col items-start text-left gap-5">
+              <FadeIn delay={100}>
+                <span className="text-[#00AECC] uppercase text-xs tracking-[0.2em] font-bold block">
+                  [ Próximo Passo ]
+                </span>
+              </FadeIn>
+
+              <FadeIn delay={200}>
+                <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-[#00AECC] pl-5"
+                  style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#001E38' }}>
+                  Reduza custos operacionais com governança e automação inteligente.
+                </h2>
+              </FadeIn>
+
+              <FadeIn delay={300}>
+                <p className="text-[#606266] text-base leading-[1.7] max-w-xl font-sans font-normal">
+                  Agende uma reunião estratégica e descubra onde estão exatamente os gargalos que travam a agilidade e o crescimento do seu negócio.
+                </p>
+              </FadeIn>
+            </div>
+
+            <div className="lg:col-span-7 w-full flex justify-center lg:justify-end">
+              <FadeIn delay={400} className="w-full max-w-[620px]">
+                <div className="bg-[#F2F4F8]/80 border border-border-subtle/50 p-6 sm:p-10 rounded-[16px] w-full shadow-xs">
+                  {submitted ? (
+                    <div className="text-center py-10 flex flex-col items-center gap-4">
+                      <div className="w-16 h-16 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center text-3xl font-bold animate-[bounce_1s_infinite]">
+                        ✓
+                      </div>
+                      <h3 className="font-sans font-bold text-[#001E38] text-xl">Diagnóstico Solicitado!</h3>
+                      <p className="text-sm text-text-secondary max-w-sm">
+                        Obrigado pelo seu contato. Nossa equipe de especialistas em saúde analisará os dados e retornará em breve.
+                      </p>
+                    </div>
+                  ) : (
+                    <ContactForm 
+                      buttonText="Transformar a Operação da minha Cooperativa" 
+                      onSubmitSuccess={() => setSubmitted(true)} 
+                    />
+                  )}
+                </div>
+              </FadeIn>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}
