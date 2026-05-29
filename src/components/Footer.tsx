@@ -14,7 +14,7 @@ export default function Footer() {
           <Link to="/" className="inline-block">
             <img
               id="footer-logo-img"
-              src="https://iliberty.com.br/wp-content/uploads/2024/07/logo-iliberty-tecnologia.png"
+              src="/logo-iliberty-tecnologia.png"
               alt="Logo iLiberty Tecnologia da Informação"
               className="h-10 w-auto object-contain brightness-0 invert"
             />

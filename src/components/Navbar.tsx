@@ -29,7 +29,7 @@ export default function Navbar() {
           <Link id="nav-logo-link" to="/" className="flex items-center">
             <img
               id="iliberty-nav-logo"
-              src="https://iliberty.com.br/wp-content/uploads/2024/07/logo-iliberty-tecnologia.png"
+              src="/logo-iliberty-tecnologia.png"
               alt="Logo iLiberty Tecnologia da Informação"
               className="h-9 w-auto object-contain"
             />
