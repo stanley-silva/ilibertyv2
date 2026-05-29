@@ -45,7 +45,7 @@ export default function Home() {
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
-    
+
     if (isLeftSwipe) {
       setTransitionEnabled(true);
       setCurrentIndex((prev) => prev + 1);
@@ -119,19 +119,19 @@ export default function Home() {
       <section id="home-hero" className="relative bg-brand-bg flex items-center justify-center px-6 lg:px-12 py-10 lg:py-14 border-b border-border-subtle z-30">
 
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00AECC06_1px,transparent_1px),linear-gradient(to_bottom,#00AECC06_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-15 opacity-80" />
-        
+
         <div className="absolute inset-0 z-15 opacity-40 pointer-events-none select-none">
           <svg className="w-full h-full text-brand-cyan/25" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M-100 150C250 -50 550 250 850 150C1150 50 1350 350 1600 200" stroke="currentColor" strokeWidth="1.2" strokeDasharray="6 6" />
             <path d="M-50 220C300 20 600 320 900 220C1200 120 1400 420 1650 270" stroke="currentColor" strokeWidth="0.6" />
-            
+
             {/* Nós e conexões pulsantes */}
             <circle cx="250" cy="80" r="3.5" className="fill-brand-cyan animate-ping" style={{ animationDuration: '3s' }} />
             <circle cx="250" cy="80" r="2.5" className="fill-brand-cyan" />
-            
+
             <circle cx="850" cy="150" r="4.5" className="fill-brand-blue animate-ping" style={{ animationDuration: '4s' }} />
             <circle cx="850" cy="150" r="3" className="fill-brand-blue" />
-            
+
             <circle cx="1150" cy="85" r="3.5" className="fill-brand-cyan animate-ping" style={{ animationDuration: '2.5s' }} />
             <circle cx="1150" cy="85" r="2.5" className="fill-brand-cyan" />
           </svg>
@@ -159,7 +159,7 @@ export default function Home() {
               <h1 className="font-sans font-bold text-brand-dark leading-tight sm:leading-[1.08] tracking-[-0.03em]"
                 style={{ fontSize: 'clamp(2.3rem, 6vw, 64px)' }}>
                 Simplificamos o que trava.<br className="hidden sm:inline" />
-                <span className="text-brand-cyan">Aceleramos o que importa.</span>
+                <span className="text-brand-cyan"> Aceleramos o que importa.</span>
               </h1>
             </FadeIn>
 
@@ -196,7 +196,7 @@ export default function Home() {
               />
 
               {/* Emblema flutuante de autoridade */}
-              <div className="absolute top-[35%] lg:top-[28%] -left-4 lg:-left-12 bg-white/95 backdrop-blur-md border border-white/80 p-4 rounded-[12px] shadow-xl flex items-center gap-4 max-w-[220px] z-20 animate-float-slow">
+              <div className="absolute top-[55%] lg:top-[28%] left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:-left-12 bg-white/95 backdrop-blur-md border border-white/80 p-4 rounded-[12px] shadow-xl flex items-center gap-4 max-w-[220px] z-20 animate-float-slow">
                 <div className="w-10 h-10 rounded-full bg-brand-cyan/15 flex items-center justify-center text-brand-cyan font-bold text-lg">
                   ✓
                 </div>
@@ -379,7 +379,7 @@ export default function Home() {
       {/* SEÇÃO 3.5: NOSSOS CLIENTES E PARCEIROS */}
       <section id="home-partners" className="py-20 bg-brand-bg px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
         <div className="max-w-[1440px] mx-auto">
-          
+
           <div className="flex flex-col items-start text-left mb-12">
             <FadeIn delay={100}>
               <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-brand-cyan mb-5">
@@ -396,7 +396,7 @@ export default function Home() {
           </div>
 
           {/* Carrossel de logotipos deslizantes */}
-          <div 
+          <div
             className="overflow-hidden w-full mt-8 py-4 -my-4 relative select-none touch-pan-y"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -434,9 +434,8 @@ export default function Home() {
                 <button
                   key={idx}
                   onClick={() => handleDotClick(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    isActive ? 'w-8 bg-brand-cyan' : 'w-2 bg-[#606266]/20 hover:bg-[#606266]/40'
-                  }`}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${isActive ? 'w-8 bg-brand-cyan' : 'w-2 bg-[#606266]/20 hover:bg-[#606266]/40'
+                    }`}
                   aria-label={`Ir para o slide ${idx + 1}`}
                 />
               );
@@ -505,7 +504,7 @@ export default function Home() {
       <section id="home-case-dracena" className="py-20 lg:py-28 bg-white px-6 lg:px-12 border-b border-border-subtle relative z-30">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             <div className="lg:col-span-6 flex flex-col items-start text-left">
               <FadeIn delay={100}>
                 <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-brand-cyan mb-5">
@@ -537,7 +536,7 @@ export default function Home() {
 
             <div className="lg:col-span-6 w-full flex justify-center lg:justify-end relative">
               <div className="w-full max-w-[460px] lg:max-w-none relative aspect-[4/3] flex items-center justify-center">
-                
+
                 <div className="relative z-10 w-full h-full rounded-tl-[100px] rounded-br-[100px] rounded-tr-none rounded-bl-none overflow-hidden border border-border-subtle/30 shadow-xl">
                   <img
                     id="case-dracena-showcase-img"
@@ -610,7 +609,7 @@ export default function Home() {
       <section id="home-cta-final" className="py-24 bg-white px-6 lg:px-12 relative z-40 border-t border-border-subtle/35">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             <div className="lg:col-span-5 flex flex-col items-start text-left gap-5">
               <FadeIn delay={100}>
                 <span className="text-[#00AECC] uppercase text-xs tracking-[0.2em] font-bold block">
@@ -646,9 +645,9 @@ export default function Home() {
                       </p>
                     </div>
                   ) : (
-                    <ContactForm 
-                      buttonText="Quero um Diagnóstico Completo" 
-                      onSubmitSuccess={() => setSubmitted(true)} 
+                    <ContactForm
+                      buttonText="Quero um Diagnóstico Completo"
+                      onSubmitSuccess={() => setSubmitted(true)}
                     />
                   )}
                 </div>

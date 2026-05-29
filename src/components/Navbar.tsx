@@ -78,11 +78,10 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* GAVETA E RETROPLANOS (MOBILE) */}
       <div
         id="mobile-menu-portal"
-        className={`fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-500 ${
-          isOpen ? 'pointer-events-auto opacity-100' : 'opacity-0'
+        className={`fixed inset-0 z-50 overflow-hidden transition-all duration-500 ${
+          isOpen ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
         {/* Fundo escurecido e desfocado */}

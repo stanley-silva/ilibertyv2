@@ -53,7 +53,7 @@ export default function CtaButton({
     </div>
   );
 
-  const containerClasses = `group inline-flex w-full sm:w-auto items-center justify-center select-none font-sans font-bold text-[13px] uppercase tracking-wider pl-6 pr-3 py-2.5 cursor-pointer transition-all duration-300 rounded-full border-2 ${bgClass} ${className}`;
+  const containerClasses = `group flex w-full sm:inline-flex sm:w-auto items-center justify-center select-none font-sans font-bold text-[13px] uppercase tracking-wider pl-6 pr-3 py-2.5 cursor-pointer transition-all duration-300 rounded-full border-2 ${bgClass} ${className}`;
 
   if (to) {
     return (

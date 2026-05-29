@@ -521,7 +521,7 @@ export default function Discovery() {
                   <div className="border-t border-white/10 pt-5 mt-2 flex justify-between items-center text-xs font-bold z-10">
                     <span className="text-[#DBDBDB]/80">Investimento de Entrada</span>
                     <span className="text-brand-cyan text-sm shadow-sm bg-brand-cyan/10 px-3 py-1.5 rounded-md border border-brand-cyan/20">
-                      A partir de R$ 15.000
+                      Preço sob Consulta
                     </span>
                   </div>
                 </div>
@@ -842,7 +842,7 @@ export default function Discovery() {
             <FadeIn delay={200}>
               <h2 className="font-sans font-bold text-brand-dark leading-tight"
                 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.6rem)', color: '#001E38' }}>
-                Quebra de Objeções
+                FAQ
               </h2>
             </FadeIn>
           </div>
