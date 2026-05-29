@@ -216,9 +216,9 @@ export default function Discovery() {
           </FadeIn>
 
           <FadeIn delay={300}>
-            <h1 className="font-sans font-bold text-brand-dark leading-[1.08] tracking-[-0.03em] max-w-4xl"
+            <h1 className="font-sans font-bold text-brand-dark leading-[1.08] tracking-[-0.03em] max-w-5xl"
               style={{ fontSize: 'clamp(2.1rem, 5.5vw, 60px)' }}>
-              Pare de investir em softwares caros antes de entender onde sua operação está <span className="text-brand-cyan">vazando dinheiro.</span>
+              <span className="text-brand-cyan">Pare de investir</span> antes de entender onde sua operação está <span className="text-brand-cyan">vazando dinheiro.</span>
             </h1>
           </FadeIn>
 
