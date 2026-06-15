@@ -165,7 +165,7 @@ export default function Home() {
 
             <FadeIn delay={450}>
               <p className="text-text-secondary text-base sm:text-[17.6px] leading-[1.65] mt-6 max-w-2xl font-sans font-medium">
-                Eliminamos os gargalos operacionais, a reentrada manual de dados e o desperdício financeiro de cooperativas de saúde e laboratórios com tecnologia sob medida e foco real em ROI.
+                Destravamos a operação de quem move o setor de saúde: menos gargalos, retrabalho manual e desperdício financeiro; mais dados conectados, agilidade e ROI mensurável.
               </p>
             </FadeIn>
 
@@ -177,7 +177,7 @@ export default function Home() {
                   variant="primary"
                 />
                 <CtaButton
-                  text="Conhecer o Discovery"
+                  text="Como trabalhamos"
                   to="/discovery"
                   variant="secondary"
                 />
@@ -260,7 +260,7 @@ export default function Home() {
                   Porque o mercado tenta encaixar a sua operação em softwares engessados, em vez de moldar a tecnologia ao seu processo. O resultado? Sistemas que não se conversam, dados descentralizados, glosas médicas crescentes e equipes sobrecarregadas com retrabalho manual.
                 </p>
                 <p className="text-[17.6px] leading-[1.8] text-text-secondary font-medium mt-6 border-l-4 border-brand-cyan pl-5 bg-brand-bg/30 py-3 pr-4 rounded-r-[4px]">
-                  Na iLiberty, fazemos o oposto: primeiro entendemos o seu gargalo financeiro e operacional por meio de diagnósticos precisos; depois, entregamos e acoplamos a solução técnica que cabe perfeitamente na sua jornada.
+                  Na iLiberty, fazemos o oposto: primeiro mapeamos onde a sua operação perde dinheiro e tempo, com um diagnóstico preciso. Só então conectamos as soluções certas, integradas num único ecossistema, ao seu processo. A tecnologia se adapta a você, e não o contrário.
                 </p>
               </FadeIn>
             </div>
@@ -309,12 +309,12 @@ export default function Home() {
                   <div className="p-6 sm:p-8 flex flex-col gap-5 text-left">
                     <div>
                       <p className="text-[10px] uppercase font-bold tracking-widest text-[#00995D] mb-1.5 font-sans">Gargalo</p>
-                      <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">Desconexão de sistemas, auditorias lentas e falta de previsibilidade de custos operacionais.</p>
+                      <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">Sistemas que não se conversam, lentidão na auditoria de contas e custo assistencial sem previsibilidade. О dinheiro vaza nos procedimentos de alto custo e a sinistralidade sobe antes de o gestor enxergar.</p>
                     </div>
                     <div className="border-b border-border-subtle/50" />
                     <div>
                       <p className="text-[10px] uppercase font-bold tracking-widest text-brand-dark mb-1.5 font-sans">Solução iLiberty</p>
-                      <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">Integração de dados em tempo real, automação de jornadas médicas complexas (Oncologia, Centro Cirúrgico) e governança profunda em saúde.</p>
+                      <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">Integração dos dados em tempo real,auditoria inteligente de 100% das contas e automação das jornadas de alto custo. Você enxerga a sinistralidade na hora e estanca o vazamento antes que ele vire prejuizo.</p>
                     </div>
                   </div>
                 </div>
@@ -350,12 +350,12 @@ export default function Home() {
                   <div className="p-6 sm:p-8 flex flex-col gap-5 text-left">
                     <div>
                       <p className="text-[10px] uppercase font-bold tracking-widest text-brand-cyan mb-1.5 font-sans">Gargalo</p>
-                      <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">Erros de digitação, glosas manuais frequentes e falta de rastreabilidade de ponta a ponta.</p>
+                      <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">Controles em paralelo, dados presos em planilhas e sem visão consolidada da operação, você decide no escuro e não enxerga onde está perdendo margem.</p>
                     </div>
                     <div className="border-b border-border-subtle/50" />
                     <div>
                       <p className="text-[10px] uppercase font-bold tracking-widest text-brand-dark mb-1.5 font-sans">Solução iLiberty</p>
-                      <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">iLab (LIMS) completo de ponta a ponta, automação robusta desde a recepção até a liberação do laudo e inteligência preditiva de estoque.</p>
+                      <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">iLab (LIMS) como fonte única de verdade: acaba com os controles paralelos, consolida toda a operação da venda ao laudo e transforma o dia a dia em indicadores de gestão, produção, TAT, custo e margem por exame, para você decidir com dado, e escalar com previsibilidade.</p>
                     </div>
                   </div>
                 </div>
@@ -459,11 +459,11 @@ export default function Home() {
               <FadeIn delay={200}>
                 <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
                   style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)' }}>
-                  +57
+                  +7
                 </div>
-                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Processos Mapeados</h4>
+                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Países</h4>
                 <p className="text-sm text-[#606266] leading-relaxed font-sans font-normal">
-                  Fluxos complexos mapeados e otimizados em projetos hospitalares e de convênios recentemente.
+                  Onde a iLiberty já entrega tecnologia e eficiência.
                 </p>
               </FadeIn>
             </div>
@@ -473,11 +473,11 @@ export default function Home() {
               <FadeIn delay={300}>
                 <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
                   style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)' }}>
-                  R$ 2.4M+
+                  +1000
                 </div>
-                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Economia Identificada</h4>
+                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Melhorias Implementadas</h4>
                 <p className="text-sm text-[#606266] leading-relaxed font-sans font-normal">
-                  Mapeados em oportunidades de economia operacional e contenção de vazamentos na fase de diagnóstico prévio.
+                  Otimizações já em produção nos processos e sistemas dos nossos clientes, não no papel.
                 </p>
               </FadeIn>
             </div>
@@ -487,11 +487,11 @@ export default function Home() {
               <FadeIn delay={400}>
                 <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
                   style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)' }}>
-                  100%
+                  R$ 1.3m+
                 </div>
-                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Metas Baseadas em ROI</h4>
+                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Economia Gerada</h4>
                 <p className="text-sm text-[#606266] leading-relaxed font-sans font-normal">
-                  De todos os nossos projetos de implantação técnica possuem metas tangíveis de eficiência, custo e retorno financeiro.
+                  Resultado financeiro real entregue com automação e processos mais enxutos
                 </p>
               </FadeIn>
             </div>
@@ -515,19 +515,19 @@ export default function Home() {
               <FadeIn delay={200}>
                 <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-brand-cyan pl-5 mb-6"
                   style={{ fontSize: 'clamp(1.8rem, 4.2vw, 2.6rem)', color: '#001E38' }}>
-                  Mais Agilidade E Eficiência<br />Com Menos Custos
+                  De uma operação fragmentada a uma jornada digital, integrada e rastreável.
                 </h2>
               </FadeIn>
 
               <FadeIn delay={300}>
                 <p className="text-[17.6px] leading-[1.8] text-[#606266] font-normal mb-8 font-sans">
-                  <strong className="text-brand-dark font-semibold">A Unimed Dracena</strong> é uma Cooperativa de Saúde que conta com mais de 8 mil beneficiários e 76 médicos cooperados. Através da Automação Robótica de Processos (RPA) a Unimed teve um salto de 87% na eficiência, otimizando processos e reduzindo drasticamente o tempo gasto com tarefas manuais e repetitivas.
+                  A <strong className="text-brand-dark font-semibold">Salutem</strong>, estrutura de participações da Unimed Bauru, reúne hospital, farmácia, locação de equipamentos e centro de diagnóstico, cada operação com seus próprios sistemas, controles e fluxos de trabalho. Com o apoio da iLiberty na estruturação do CSC, processos antes manuais, descentralizados e pouco rastreáveis foram redesenhados e digitalizados. A jornada evoluiu da admissão sem papel ao canal único de atendimento, com integrações entre sistemas, padronização dos fluxos e indicadores em tempo real para apoiar a gestão.
                 </p>
               </FadeIn>
 
               <FadeIn delay={400}>
                 <CtaButton
-                  text="Saiba Mais"
+                  text="Ler o Case Completo"
                   to="/contato"
                   variant="primary"
                 />
@@ -540,8 +540,8 @@ export default function Home() {
                 <div className="relative z-10 w-full h-full rounded-tl-[100px] rounded-br-[100px] rounded-tr-none rounded-bl-none overflow-hidden border border-border-subtle/30 shadow-xl">
                   <img
                     id="case-dracena-showcase-img"
-                    src="/assets/foto_case_secao_06.webp"
-                    alt="Interior da Unimed Dracena - Recepção moderna"
+                    src="/assets/foto_case_secao_06_v2.webp"
+                    alt="Prédio da Unimed Bauru - Visto de fora"
                     className="w-full h-full object-cover rounded-tl-[100px] rounded-br-[100px] rounded-tr-none rounded-bl-none transition-transform duration-750 hover:scale-103"
                   />
                 </div>
@@ -568,13 +568,13 @@ export default function Home() {
               <FadeIn delay={200}>
                 <h2 className="font-sans font-bold text-brand-dark leading-[1.12] tracking-[-0.02em] mb-6 border-l-4 border-brand-cyan pl-5"
                   style={{ fontSize: 'clamp(1.75rem, 4.2vw, 2.8rem)' }} id="difference-title">
-                  Por que não somos mais uma empresa de software corporativo.
+                  Tecnologia que não devolve dinheiro ao caixa não serve.
                 </h2>
               </FadeIn>
 
               <FadeIn delay={300}>
                 <p className="text-[17.6px] leading-[1.8] text-text-secondary font-normal mb-8 font-sans" id="difference-desc">
-                  O mercado está cheio de sistemas caros que prometem milagres, mas entregam apenas telas novas para os mesmos processos ineficientes. Na iLiberty, nós jogamos outro jogo. Não romantizamos a tecnologia. Se uma solução não simplifica o que está travando a sua operação e não gera retorno real para o seu caixa, ela simplesmente não serve.
+                  O mercado está cheio de sistemas que trocam a tela e mantêm o processo ineficiente por baixo. Na iLiberty, o jogo é outro: nenhum projeto começa pela ferramenta. Começa por um diagnóstico que mostra, em números, onde a sua operação perde dinheiro, e toda implantação nasce com metas de eficiência, custo e retorno definidas em contrato. Se não dá pra medir o resultado, a gente não propõe a solução.
                 </p>
               </FadeIn>
 
@@ -620,13 +620,14 @@ export default function Home() {
               <FadeIn delay={200}>
                 <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-[#00AECC] pl-5"
                   style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#001E38' }}>
-                  Pare de perder dinheiro com processos engessados.
+                  Descubra exatamente onde a sua operação perde dinheiro.
                 </h2>
               </FadeIn>
 
               <FadeIn delay={300}>
                 <p className="text-[#606266] text-base leading-[1.7] max-w-xl font-sans font-normal">
-                  Agende uma reunião estratégica e descubra onde estão exatamente os gargalos que travam a agilidade e o crescimento do seu negócio.
+                  Em uma conversa de 30 minutos, mapeamos com você os gargalos que travam o seu caixa e o seu crescimento, e por onde começar a destravar.
+
                 </p>
               </FadeIn>
             </div>
@@ -646,7 +647,7 @@ export default function Home() {
                     </div>
                   ) : (
                     <ContactForm
-                      buttonText="Quero um Diagnóstico Completo"
+                      buttonText="Quero falar com um especialista"
                       onSubmitSuccess={() => setSubmitted(true)}
                     />
                   )}
