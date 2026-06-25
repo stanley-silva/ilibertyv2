@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Network, AlertTriangle, ShieldAlert, Activity, Scissors, BarChart2, Send } from 'lucide-react';
+import { Unlink, EyeOff, ShieldAlert, ClipboardCheck, FileSearch, TrendingUp } from 'lucide-react';
 import CtaButton from '../components/CtaButton';
 import Badge from '../components/Badge';
 import FadeIn from '../components/FadeIn';
@@ -130,7 +130,7 @@ export default function Cooperativas() {
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
                   <div className="w-12 h-12 rounded-full bg-[#00995D]/10 text-[#00995D] flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
-                    <Network className="w-5 h-5" />
+                    <Unlink className="w-5 h-5" />
                   </div>
                   <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
                     Sistemas Desconectados
@@ -146,7 +146,7 @@ export default function Cooperativas() {
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
                   <div className="w-12 h-12 rounded-full bg-[#00995D]/10 text-[#00995D] flex items-center justify-center mb-6 shadow-xs transition-transform group-hover:scale-105 duration-300">
-                    <AlertTriangle className="w-5 h-5" />
+                    <EyeOff className="w-5 h-5" />
                   </div>
                   <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
                     Gargalos Invisíveis
@@ -198,7 +198,7 @@ export default function Cooperativas() {
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
                   <div className="w-12 h-12 bg-[#00995D]/10 text-[#00995D] flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
-                    <Activity className="w-6 h-6" />
+                    <ClipboardCheck className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
                     Autorização e Regulação Assistencial
@@ -214,7 +214,7 @@ export default function Cooperativas() {
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
                   <div className="w-12 h-12 bg-[#00995D]/10 text-[#00995D] flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
-                    <Scissors className="w-6 h-6" />
+                    <FileSearch className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
                     Auditoria de Contas Médicas
@@ -230,7 +230,7 @@ export default function Cooperativas() {
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
                   <div className="w-12 h-12 bg-[#00995D]/10 text-[#00995D] flex items-center justify-center rounded-[6px] mb-6 shadow-xs">
-                    <BarChart2 className="w-6 h-6" />
+                    <TrendingUp className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
                     Governança Financeira e Tomada de Decisão

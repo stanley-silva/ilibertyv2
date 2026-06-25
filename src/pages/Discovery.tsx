@@ -21,7 +21,9 @@ import {
   TrendingDown,
   Clock,
   Layers,
-  Coins
+  Coins,
+  Unlink,
+  EyeOff
 } from 'lucide-react';
 import AnimatedShader from '../components/AnimatedShader';
 import CtaButton from '../components/CtaButton';
@@ -399,7 +401,7 @@ export default function Discovery() {
             <FadeIn delay={200} className="flex">
               <div className="bg-[#F2F4F8]/50 border border-border-subtle/50 rounded-2xl p-6 sm:p-8 flex gap-5 text-left hover:bg-white hover:border-brand-cyan/20 hover:shadow-md transition-all duration-300 group w-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex-shrink-0 flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan group-hover:text-white transition-all duration-300">
-                  <Database className="w-6 h-6" />
+                  <Unlink className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-base sm:text-md font-bold text-brand-dark font-sans uppercase tracking-wider">Sistemas que não se conversam</h3>
@@ -413,7 +415,7 @@ export default function Discovery() {
             <FadeIn delay={300} className="flex">
               <div className="bg-[#F2F4F8]/50 border border-border-subtle/50 rounded-2xl p-6 sm:p-8 flex gap-5 text-left hover:bg-white hover:border-brand-cyan/20 hover:shadow-md transition-all duration-300 group w-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex-shrink-0 flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan group-hover:text-white transition-all duration-300">
-                  <Clock className="w-6 h-6" />
+                  <FileText className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-base sm:text-md font-bold text-brand-dark font-sans uppercase tracking-wider">Processos manuais e retrabalho</h3>
@@ -428,7 +430,7 @@ export default function Discovery() {
             <FadeIn delay={400} className="flex">
               <div className="bg-[#F2F4F8]/50 border border-border-subtle/50 rounded-2xl p-6 sm:p-8 flex gap-5 text-left hover:bg-white hover:border-brand-cyan/20 hover:shadow-md transition-all duration-300 group w-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex-shrink-0 flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan group-hover:text-white transition-all duration-300">
-                  <AlertTriangle className="w-6 h-6" />
+                  <EyeOff className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-base sm:text-md font-bold text-brand-dark font-sans uppercase tracking-wider">Tomada de decisão no escuro</h3>
@@ -443,7 +445,7 @@ export default function Discovery() {
             <FadeIn delay={500} className="flex">
               <div className="bg-[#F2F4F8]/50 border border-border-subtle/50 rounded-2xl p-6 sm:p-8 flex gap-5 text-left hover:bg-white hover:border-brand-cyan/20 hover:shadow-md transition-all duration-300 group w-full">
                 <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex-shrink-0 flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan group-hover:text-white transition-all duration-300">
-                  <TrendingDown className="w-6 h-6" />
+                  <Coins className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-base sm:text-md font-bold text-brand-dark font-sans uppercase tracking-wider">Risco de glosa e custo crescente</h3>
