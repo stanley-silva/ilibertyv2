@@ -16,23 +16,23 @@ export default function Cooperativas() {
 
   return (
     <div id="cooperativas-page" className="w-full pt-20 bg-white">
-      
+
       {/* SEÇÃO 1: APRESENTAÇÃO (HERO) */}
       <section id="coop-hero" className="relative bg-brand-bg flex items-center justify-center px-6 lg:px-12 py-16 lg:py-24 border-b border-border-subtle z-30 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00995D06_1px,transparent_1px),linear-gradient(to_bottom,#00995D06_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-15 opacity-80" />
-        
+
         <div className="absolute inset-0 z-15 opacity-40 pointer-events-none select-none">
           <svg className="w-full h-full text-[#00995D]/25" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M-100 150C250 -50 550 250 850 150C1150 50 1350 350 1600 200" stroke="currentColor" strokeWidth="1.2" strokeDasharray="6 6" />
             <path d="M-50 220C300 20 600 320 900 220C1200 120 1400 420 1650 270" stroke="currentColor" strokeWidth="0.6" />
-            
+
             {/* Nós e conexões pulsantes */}
             <circle cx="250" cy="80" r="3.5" className="fill-[#00995D] animate-ping" style={{ animationDuration: '3s' }} />
             <circle cx="250" cy="80" r="2.5" className="fill-[#00995D]" />
-            
+
             <circle cx="850" cy="150" r="4.5" className="fill-brand-blue animate-ping" style={{ animationDuration: '4s' }} />
             <circle cx="850" cy="150" r="3" className="fill-brand-blue" />
-            
+
             <circle cx="1150" cy="85" r="3.5" className="fill-[#00995D] animate-ping" style={{ animationDuration: '2.5s' }} />
             <circle cx="1150" cy="85" r="2.5" className="fill-[#00995D]" />
           </svg>
@@ -47,7 +47,7 @@ export default function Cooperativas() {
 
         {/* Content grid */}
         <div className="relative z-20 max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <FadeIn delay={150}>
               <span className="inline-block text-xs uppercase tracking-widest font-bold text-brand-dark mb-5 border-l-2 border-[#00995D] pl-3">
@@ -58,14 +58,14 @@ export default function Cooperativas() {
             <FadeIn delay={300}>
               <h1 className="font-sans font-bold text-brand-dark leading-[1.08] tracking-[-0.03em]"
                 style={{ fontSize: 'clamp(2.3rem, 5.5vw, 60px)', color: '#001E38' }}>
-                Integração, Eficiência e<br />
-                <span className="text-[#00995D]">Governança de Dados para Operadoras.</span>
+                Integração, Automação e<br />
+                <span className="text-[#00995D]">Previsibilidade para a operação assistencial.</span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={450}>
               <p className="text-text-secondary text-base sm:text-[18px] leading-[1.7] mt-6 max-w-2xl font-sans font-medium">
-                Conectamos sistemas isolados, automatizamos fluxos assistenciais e eliminamos o retrabalho manual que infla os custos operacionais de cooperativas de saúde e hospitais.
+                Conectamos sistemas isolados, automatizamos fluxos de alto custo e eliminamos o retrabalho que infla os custos assistenciais, para que cooperativas de saúde e hospitais decidam com dado, não com achismo.
               </p>
             </FadeIn>
 
@@ -82,7 +82,7 @@ export default function Cooperativas() {
 
           <div className="lg:col-span-5 w-full flex justify-center lg:justify-end relative">
             <div className="w-full max-w-[440px] lg:max-w-none relative aspect-[4/3] flex items-center justify-center">
-              
+
               <div className="relative z-10 w-full h-full rounded-tl-[100px] rounded-br-[100px] rounded-tr-none rounded-bl-none overflow-hidden border border-border-subtle/30 shadow-lg">
                 <img
                   src="/assets/cooperativas_e_hospitais_secao01.webp"
@@ -125,7 +125,7 @@ export default function Cooperativas() {
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             <FadeIn delay={300} className="flex">
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 sm:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
@@ -136,7 +136,7 @@ export default function Cooperativas() {
                     Sistemas Desconectados
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                    O ERP não conversa perfeitamente com o prontuário dos pacientes, que por sua vez não se integra ao faturamento e à auditoria médica, fragmentando a governança.
+                    ERP, prontuário do paciente, faturamento e auditoria médica funcionam como ilhas: cada sistema fala uma língua, e a diretoria nunca vê a operação por inteiro.
                   </p>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function Cooperativas() {
                     Gargalos Invisíveis
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                    Processos gerenciais e assistenciais de alta complexidade dependem inteiramente de check-lists e planilhas manuais geridas por equipes dispersas.
+                    Processos críticos, gerenciais e assistenciais, rodam em checklists, planilhas e e-mails, sob equipes dispersas. O gargalo só aparece quando o estrago já foi feito.
                   </p>
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function Cooperativas() {
                     Risco de Glosa e Fraude
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                    Falta de rastreabilidade de ponta a ponta e lentidão no cruzamento de dados gerenciais levam a vazamentos financeiros operacionais constantes e glosas inevitáveis.
+                    Sem rastreabilidade fim a fim e com o cruzamento de dados feito tarde demais, vazamentos financeiros viram rotina, e a glosa, inevitável.
                   </p>
                 </div>
               </div>
@@ -188,12 +188,12 @@ export default function Cooperativas() {
           <FadeIn delay={200}>
             <h2 className="font-sans font-bold text-brand-dark tracking-[-0.02em] leading-tight mb-16 text-left"
               style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)', color: '#001E38' }}>
-              Não vendemos apenas código, organizamos a sua casa.
+              Atuamos onde a margem é decidida.
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
+
             <FadeIn delay={300} className="flex">
               <div className="bg-white border border-border-subtle rounded-[6px] p-8 lg:p-10 flex flex-col justify-between w-full shadow-xs hover:shadow-md transition-all duration-300 group">
                 <div className="text-left">
@@ -201,10 +201,10 @@ export default function Cooperativas() {
                     <Activity className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
-                    Oncologia & Terapias Complexas
+                    Autorização e Regulação Assistencial
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                    Otimização estratégica do fluxo assistencial, diminuindo sensivelmente o tempo para a liberação de terapias oncológicas e tratamentos complexos, garantindo a eliminação de desperdícios em medicamentos e kits de alto custo.
+                    Estruturamos o fluxo de autorização e regulação para que cada liberação passe pelos critérios certos - clínicos, contratuais e econômicos - antes de virar conta. É onde a sinistralidade ainda pode ser contida.
                   </p>
                 </div>
               </div>
@@ -217,10 +217,10 @@ export default function Cooperativas() {
                     <Scissors className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
-                    Centro Cirúrgico & OPME
+                    Auditoria de Contas Médicas
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                    Mapeamos gargalos de eficiência, melhoramos a previsibilidade e a ocupação das salas cirúrgicas e implementamos controle integrado com rastreabilidade total de material cirúrgico de órteses, próteses e materiais especiais conectados diretamente com as auditorias.
+                    Levamos aauditoria de contas da amostragem para a cobertura plena, com cruzamento inteligente de dados, identificação de inconsistências e priorização do que de fato impacta o caixa.
                   </p>
                 </div>
               </div>
@@ -233,10 +233,10 @@ export default function Cooperativas() {
                     <BarChart2 className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-dark mb-4 font-sans tracking-wide">
-                    Financeiro & Controladoria
+                    Governança Financeira e Tomada de Decisão
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                    Automação integrada de processos de faturamento, conciliações bancárias complexas, auditorias de prestadores adicionados e geração em tempo real de painéis estratégicos de governança e tomadas de decisão.
+                    Conectamos faturamento, conciliação, custos assistenciais e indicadores em uma camada única de governança financeira, para que a diretoria decida com dado em tempo real, não com relatório do mês passado.
                   </p>
                 </div>
               </div>
@@ -250,7 +250,7 @@ export default function Cooperativas() {
       <section id="coop-caso" className="py-20 lg:py-28 bg-white px-6 lg:px-12 border-b border-border-subtle/50">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             <div className="lg:col-span-6 flex flex-col gap-4 text-left">
               <FadeIn delay={100}>
                 <Badge number="3" text="Prova de Conceito" themeColor="green" />
@@ -259,37 +259,37 @@ export default function Cooperativas() {
               <FadeIn delay={200}>
                 <h2 className="text-brand-dark font-sans font-bold leading-tight mb-2"
                   style={{ fontSize: 'clamp(1.75rem, 3.8vw, 2.8rem)', color: '#001E38' }}>
-                  Metodologia Aplicada na Unimed Avaré
+                  Como a Unimed Dracena devolveu 4500 horas por ano à equipe
                 </h2>
                 <div className="space-y-4 text-[17.6px] text-text-secondary leading-relaxed font-sans font-normal">
                   <p>
-                    No projeto desenvolvido para a <strong className="text-brand-dark font-semibold">Unimed Avaré</strong>, o método iLiberty mapeou com profundidade a operation, fornecendo diagnóstico detalhado e subsídios cruciais antes de qualquer implementação de código.
+                    Antes, os processos financeiros, contábeis e de faturamento da <strong className="text-brand-dark font-semibold">Unimed Dracena</strong> eram inteiramente manuais - consumindo milhares de horas e gerando erros e retrabalho. A diretoria queria reduzir custo operacional, acelerar o fechamento contábil e liberar a equipe para análises estratégicas.
                   </p>
                   <p className="border-l-4 border-[#00995D] pl-5 bg-brand-bg/30 py-3 pr-4 rounded-r-[4px] font-medium">
-                    Nossa equipe estruturou a integração total de dados e reconciliou fluxos operacionais, fornecendo segurança corporativa máxima para as tomadas de decisões financeiras e de governança operacional de saúde da cooperativa.
+                    A iLiberty revisou e redesenhou os processos críticos antes de qualquer linha de automação. Sobre essa base, implantamos um programa de RPA que eliminou tarefas repetitivas, manteve a conformidade fiscal e devolveu mais de 4.500 horas por ano à equipe.
                   </p>
                 </div>
               </FadeIn>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                
+
                 <FadeIn delay={300}>
                   <div className="bg-white border border-border-subtle rounded-[6px] p-6 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-300">
                     <div>
-                      <p className="text-[#00995D] text-4xl font-bold font-sans">+20</p>
-                      <p className="text-[10px] uppercase tracking-wider font-bold text-text-secondary mt-1">Áreas Analisadas</p>
+                      <p className="text-[#00995D] text-4xl font-bold font-sans">+10</p>
+                      <p className="text-[10px] uppercase tracking-wider font-bold text-text-secondary mt-1">Processos automatizados</p>
                     </div>
-                    <span className="text-[10px] text-[#00995D] font-bold border border-[#00995D]/20 px-2 py-0.5 bg-[#00995D]/5 rounded uppercase">Mapeamento</span>
+                    <span className="text-[10px] text-[#00995D] font-bold border border-[#00995D]/20 px-2 py-0.5 bg-[#00995D]/5 rounded uppercase">Automação</span>
                   </div>
                 </FadeIn>
 
                 <FadeIn delay={400}>
                   <div className="bg-white border border-border-subtle rounded-[6px] p-6 flex items-center justify-between shadow-xs hover:shadow-md transition-all duration-300">
                     <div>
-                      <p className="text-[#00995D] text-4xl font-bold font-sans">+57</p>
-                      <p className="text-[10px] uppercase tracking-wider font-bold text-text-secondary mt-1">Processos Mapeados</p>
+                      <p className="text-[#00995D] text-4xl font-bold font-sans">+4.500</p>
+                      <p className="text-[10px] uppercase tracking-wider font-bold text-text-secondary mt-1">Horas/Ano devolvidas</p>
                     </div>
-                    <span className="text-[10px] text-[#00995D] font-bold border border-[#00995D]/20 px-2 py-0.5 bg-[#00995D]/5 rounded uppercase">Metrificados</span>
+                    <span className="text-[10px] text-[#00995D] font-bold border border-[#00995D]/20 px-2 py-0.5 bg-[#00995D]/5 rounded uppercase">Economia</span>
                   </div>
                 </FadeIn>
 
@@ -298,7 +298,7 @@ export default function Cooperativas() {
 
             <div className="lg:col-span-6 relative">
               <div className="absolute -inset-6 bg-gradient-to-r from-[#00995D]/20 to-brand-blue/20 rounded-[24px] blur-3xl opacity-80 -z-10 animate-pulse" />
-              
+
               <div className="absolute -top-6 -left-6 w-32 h-32 text-[#00995D]/20 -z-10">
                 <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                   <defs>
@@ -332,7 +332,7 @@ export default function Cooperativas() {
       <section id="coop-cta" className="py-24 bg-white px-6 lg:px-12 relative z-40 border-t border-border-subtle/35">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             <div className="lg:col-span-5 flex flex-col items-start text-left gap-5">
               <FadeIn delay={100}>
                 <span className="text-[#00995D] uppercase text-xs tracking-[0.2em] font-bold block">
@@ -343,13 +343,15 @@ export default function Cooperativas() {
               <FadeIn delay={200}>
                 <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-[#00995D] pl-5"
                   style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#001E38' }}>
-                  Reduza custos operacionais com governança e automação inteligente.
+                  Descubra, em números, onde a sua operação está perdendo margem.
+
                 </h2>
               </FadeIn>
 
               <FadeIn delay={300}>
                 <p className="text-[#606266] text-base leading-[1.7] max-w-xl font-sans font-normal">
-                  Agende uma reunião estratégica e descubra onde estão exatamente os gargalos que travam a agilidade e o crescimento do seu negócio.
+                  Em uma conversa de 30 minutos, mapeamos com você as três réguas onde a margem se decide - autorização, auditoria de contas e governança financeira - e mostramos por onde começar a destravar.
+
                 </p>
               </FadeIn>
             </div>
@@ -368,9 +370,9 @@ export default function Cooperativas() {
                       </p>
                     </div>
                   ) : (
-                    <ContactForm 
-                      buttonText="Transformar a Operação da minha Cooperativa" 
-                      onSubmitSuccess={() => setSubmitted(true)} 
+                    <ContactForm
+                      buttonText="Transformar a Operação da minha Cooperativa"
+                      onSubmitSuccess={() => setSubmitted(true)}
                       themeColor="green"
                     />
                   )}

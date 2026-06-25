@@ -22,7 +22,7 @@ export default function Contato() {
 
   return (
     <div id="contato-page" className="w-full pt-20">
-      
+
       {/* SEÇÃO 1: APRESENTAÇÃO (HERO) */}
       <section id="contato-hero" className="relative min-h-[calc(100vh-80px)] xl:min-h-[80vh] bg-[#F2F4F8] flex items-end justify-start overflow-hidden px-6 lg:px-12 py-16 lg:py-24 border-b border-[#DBDBDB]">
         {/* Shader animado de fundo com tom azul ciano */}
@@ -38,14 +38,14 @@ export default function Contato() {
           <FadeIn delay={300}>
             <h1 className="font-sans font-semibold text-[#333333] leading-[1.08] tracking-[-0.03em] max-w-4xl"
               style={{ fontSize: 'clamp(2.1rem, 6.2vw, 4.2rem)' }}>
-              Vamos acelerar<br />
-              <span className="text-[#00AECC]">os seus resultados?</span>
+              Como você prefere<br />
+              <span className="text-[#00AECC]">falar com a gente?</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={450}>
             <p className="text-[#606266] text-base sm:text-[18px] leading-[1.65] mt-6 max-w-2xl font-sans font-medium">
-              Preencha o formulário institucional de qualificação abaixo. Nosso time de especialistas seniores analisará o perfil operacional da sua empresa antes do primeiro contato para garantir uma reunião 100% produtiva e focada em suas dores.
+              Cada conversa começa onde você estiver. Escolha o canal que faz mais sentido para o seu momento, e dali a gente segue.
             </p>
           </FadeIn>
         </div>
@@ -54,29 +54,30 @@ export default function Contato() {
       {/* SEÇÃO 2: FORMULÁRIO + INFO DE CONTATO */}
       <section id="contato-form-section" className="py-20 lg:py-32 bg-white px-6 lg:px-12 border-b border-[#DBDBDB]">
         <div className="max-w-[1440px] mx-auto">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
-            <div className="lg:col-span-7 bg-[#F2F4F8] border border-[#DBDBDB] rounded-[5px] p-6 sm:p-10">
-              
+
+            <div className="lg:col-span-7 bg-[#F2F4F8] border border-[#DBDBDB] rounded-2xl p-6 sm:p-10 shadow-xs">
+
               {!formSubmitted ? (
                 <div className="flex flex-col gap-6 text-left">
                   <div>
-                    <h2 className="text-xl font-bold text-brand-dark font-sans border-b border-border-subtle pb-3 mb-2" id="form-title">
-                      Formulário de Qualificação
+                    <h2 className="text-xl font-bold text-brand-dark font-sans border-b border-[#DBDBDB] pb-3 mb-2" id="form-title">
+                      Contato
                     </h2>
-                    <p className="text-text-secondary text-xs" id="form-subtitle">
+                    <p className="text-text-secondary text-[11px]" id="form-subtitle">
                       Todos os dados são criptografados e confidenciais corporativamente de acordo com a LGPD.
                     </p>
                   </div>
-                  <ContactForm 
-                    buttonText="Solicitar Reunião de Diagnóstico"
+                  <ContactForm
+                    buttonText="FALAR COM UM ESPECIALISTA"
+                    showPorte={false}
                     onSubmitSuccess={handleSubmit}
                   />
                 </div>
               ) : (
                 <div id="contato-sucesso-view" className="text-left py-4 flex flex-col font-sans">
-                  
+
                   <div className="flex items-center gap-4 mb-6 border-b border-border-subtle pb-6" id="success-header">
                     <div className="w-14 h-14 bg-brand-cyan/10 text-brand-cyan flex items-center justify-center rounded-full shrink-0">
                       <CheckCircle2 className="w-8 h-8 animate-pulse" id="success-icon" />
@@ -133,58 +134,67 @@ export default function Contato() {
                   </button>
                 </div>
               )}
-
             </div>
 
-            <div className="lg:col-span-5 flex flex-col gap-6 text-left font-sans">
-              
-              <div className="flex flex-col gap-6">
+            <div className="lg:col-span-5 flex flex-col gap-8 text-left font-sans pl-0 lg:pl-6">
+
+              <div className="flex flex-col gap-8">
                 <div className="flex items-start gap-4 text-[#606266] text-[15.5px]">
-                  <div className="w-8 h-8 rounded-full bg-[#F2F4F8] flex items-center justify-center text-[#00AECC] shrink-0">
-                    <MapPin className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-full bg-[#00AECC]/10 border border-[#00AECC]/20 flex items-center justify-center text-[#00AECC] shrink-0 shadow-xs">
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="text-[#333333] block mb-1">Localização Física</strong>
-                    <p>Rua 13 de maio, 642</p>
-                    <p>Indaiatuba, São Paulo — SP</p>
+                    <strong className="text-[#333333] block mb-1 text-base">Endereço</strong>
+                    <p className="text-sm">Rua 13 de maio, 642</p>
+                    <p className="text-sm">Indaiatuba, São Paulo — SP</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 text-[#606266] text-[15.5px] border-t border-[#DBDBDB] pt-6">
-                  <div className="w-8 h-8 rounded-full bg-[#F2F4F8] flex items-center justify-center text-[#00AECC] shrink-0">
-                    <User className="w-4 h-4" />
+                <div className="flex items-start gap-4 text-[#606266] text-[15.5px] border-t border-[#DBDBDB] pt-8">
+                  <div className="w-10 h-10 rounded-full bg-[#00AECC]/10 border border-[#00AECC]/20 flex items-center justify-center text-[#00AECC] shrink-0 shadow-xs">
+                    <User className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="text-[#333333] block mb-1">Contato Executivo Comercial</strong>
-                    <p>Rafael Borges</p>
-                    <p className="text-sm font-semibold text-[#00AECC]">Diretoria de Contas & ROI</p>
+                    <strong className="text-[#333333] block mb-1 text-base">Quem responde por aqui</strong>
+                    <p className="text-sm font-semibold text-brand-dark mb-1">
+                      <a href="mailto:comercial@iliberty.com.br" className="hover:text-brand-cyan transition-colors">
+                        comercial@iliberty.com.br
+                      </a>
+                    </p>
+                    <p className="text-xs font-semibold text-[#00AECC]">
+                      Segunda a sexta, das 9h às 18h - Resposta em até 24h úteis
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3 mt-2">
-                
-                <div className="bg-[#F2F4F8] border-l-2 border-[#00AECC] p-4 rounded-[5px] flex items-center gap-3">
-                  <span className="w-5 h-5 bg-[#00AECC]/10 text-[#00AECC] flex items-center justify-center rounded-full text-[11px] shrink-0">✓</span>
-                  <span className="text-xs font-semibold text-[#333333]">Análise prévia do perfil operacional antes da chamada</span>
+              <div className="flex flex-col gap-3 mt-4">
+
+                <div className="bg-[#F2F4F8] border-l-3 border-[#00AECC] p-4 rounded-[6px] flex items-center gap-3 shadow-2xs hover:shadow-xs transition-shadow">
+                  <span className="w-5 h-5 bg-[#00AECC]/10 text-[#00AECC] flex items-center justify-center rounded-full text-[10px] shrink-0 font-bold">✓</span>
+                  <span className="text-xs text-[#333333] font-medium">
+                    Comercial: <a href="mailto:comercial@iliberty.com.br" className="font-bold hover:text-brand-cyan transition-colors">comercial@iliberty.com.br</a>
+                  </span>
                 </div>
 
-                <div className="bg-[#F2F4F8] border-l-2 border-[#00AECC] p-4 rounded-[5px] flex items-center gap-3">
-                  <span className="w-5 h-5 bg-[#00AECC]/10 text-[#00AECC] flex items-center justify-center rounded-full text-[11px] shrink-0">✓</span>
-                  <span className="text-xs font-semibold text-[#333333]">Garantia de reunião tática 100% produtiva e resolutiva</span>
+                <div className="bg-[#F2F4F8] border-l-3 border-[#00AECC] p-4 rounded-[6px] flex items-center gap-3 shadow-2xs hover:shadow-xs transition-shadow">
+                  <span className="w-5 h-5 bg-[#00AECC]/10 text-[#00AECC] flex items-center justify-center rounded-full text-[10px] shrink-0 font-bold">✓</span>
+                  <span className="text-xs text-[#333333] font-medium">
+                    Suporte ao cliente: <a href="mailto:suporte@iliberty.com.br" className="font-bold hover:text-brand-cyan transition-colors">suporte@iliberty.com.br</a>
+                  </span>
                 </div>
 
-                <div className="bg-[#F2F4F8] border-l-2 border-[#00AECC] p-4 rounded-[5px] flex items-center gap-3">
-                  <span className="w-5 h-5 bg-[#00AECC]/10 text-[#00AECC] flex items-center justify-center rounded-full text-[11px] shrink-0">✓</span>
-                  <span className="text-xs font-semibold text-[#333333]">Sem compromisso financeiro ou contratual inicial</span>
+                <div className="bg-[#F2F4F8] border-l-3 border-[#00AECC] p-4 rounded-[6px] flex items-center gap-3 shadow-2xs hover:shadow-xs transition-shadow">
+                  <span className="w-5 h-5 bg-[#00AECC]/10 text-[#00AECC] flex items-center justify-center rounded-full text-[10px] shrink-0 font-bold">✓</span>
+                  <span className="text-xs text-[#333333] font-medium">
+                    Parcerias: <a href="mailto:contato@iliberty.com.br" className="font-bold hover:text-brand-cyan transition-colors">contato@iliberty.com.br</a>
+                  </span>
                 </div>
 
               </div>
-
             </div>
 
           </div>
-
         </div>
       </section>
 

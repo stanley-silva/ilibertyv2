@@ -16,13 +16,15 @@ export interface ContactFormProps {
   onSubmitSuccess: (values: ContactFormValues) => void;
   isLoading?: boolean;
   themeColor?: 'cyan' | 'green';
+  showPorte?: boolean;
 }
 
 export default function ContactForm({
   buttonText = 'ENVIAR SOLICITAÇÃO E AGENDAR REUNIÃO',
   onSubmitSuccess,
   isLoading = false,
-  themeColor = 'cyan'
+  themeColor = 'cyan',
+  showPorte = true
 }: ContactFormProps) {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -34,14 +36,14 @@ export default function ContactForm({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (nome && email && phone && empresa && segmento && porte) {
+    if (nome && email && phone && empresa && segmento && (!showPorte || porte)) {
       onSubmitSuccess({
         nome,
         email,
         phone,
         empresa,
         segmento,
-        porte,
+        porte: showPorte ? porte : 'N/A',
         desafio
       });
     }
@@ -139,28 +141,30 @@ export default function ContactForm({
       </div>
 
       {/* Porte / Volume Operacional */}
-      <div className="flex flex-col gap-1.5 w-full">
-        <label htmlFor="form-porte" className="text-xs font-bold text-brand-dark uppercase tracking-wider font-sans">
-          Porte / Volume Operacional Estimado *
-        </label>
-        <select
-          id="form-porte"
-          required
-          value={porte}
-          onChange={(e) => setPorte(e.target.value)}
-          className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 appearance-none font-sans cursor-pointer bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23606266%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem] bg-[right_1rem_center] bg-no-repeat pr-10 ${focusClass}`}
-        >
-          <option value="" disabled hidden>Selecione o volume diário</option>
-          <option value="Até 500 exames/procedimentos por dia">Até 500 exames ou procedimentos diários</option>
-          <option value="De 501 a 2.000 exames por dia">De 501 a 2.000 exames ou procedimentos diários</option>
-          <option value="Acima de 2.000 exames por dia ou Grande Operadora">Acima de 2.000 exames diários / Grande Operadora</option>
-        </select>
-      </div>
+      {showPorte && (
+        <div className="flex flex-col gap-1.5 w-full">
+          <label htmlFor="form-porte" className="text-xs font-bold text-brand-dark uppercase tracking-wider font-sans">
+            Porte / Volume Operacional Estimado *
+          </label>
+          <select
+            id="form-porte"
+            required
+            value={porte}
+            onChange={(e) => setPorte(e.target.value)}
+            className={`w-full bg-white border border-[#DBDBDB] rounded-[6px] px-4 py-3 text-sm focus:outline-none focus:ring-1 text-brand-dark transition-all duration-200 appearance-none font-sans cursor-pointer bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23606266%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.1rem] bg-[right_1rem_center] bg-no-repeat pr-10 ${focusClass}`}
+          >
+            <option value="" disabled hidden>Selecione o volume diário</option>
+            <option value="Até 500 exames/procedimentos por dia">Até 500 exames ou procedimentos diários</option>
+            <option value="De 501 a 2.000 exames por dia">De 501 a 2.000 exames ou procedimentos diários</option>
+            <option value="Acima de 2.000 exames por dia ou Grande Operadora">Acima de 2.000 exames diários / Grande Operadora</option>
+          </select>
+        </div>
+      )}
 
       {/* Desafio Principal / Gargalo */}
       <div className="flex flex-col gap-1.5 w-full">
         <label htmlFor="form-desafio" className="text-xs font-bold text-brand-dark uppercase tracking-wider font-sans">
-          Principal Desafio / Gargalo Operacional
+          O que está travando sua operação?
         </label>
         <textarea
           id="form-desafio"

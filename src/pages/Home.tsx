@@ -581,7 +581,7 @@ export default function Home() {
               <FadeIn delay={400}>
                 <CtaButton
                   id="btn-difference-cta"
-                  text="Solicitar orçamento"
+                  text="Agendar uma conversa"
                   to="/contato"
                   variant="primary"
                 />

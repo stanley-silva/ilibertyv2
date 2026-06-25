@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Shield,
   Database,
@@ -113,64 +114,92 @@ export default function Discovery() {
 
   const faqs = [
     {
-      q: 'O Discovery exige a troca imediata dos nossos softwares atuais?',
+      q: 'Preciso trocar meus sistemas atuais ?',
       a: 'Não. O Discovery analisa seus sistemas vigentes (como Korus, TOTVS, Smart, AUTSC, etc.). O objetivo é integrar e otimizar o que você já possui através de barramentos de APIs ou automações robóticas (RPA), e não gerar custos de substituição desnecessários.'
     },
     {
-      q: 'Minha equipe está sobrecarregada. Quanto tempo o Discovery vai exigir deles?',
-      a: 'O processo é conduzido de forma acelerada e remota pelos especialistas da iLiberty ao longo de 4 semanas. As entrevistas e coletas de dados são planejadas de forma cirúrgica para não impactar a rotina de atendimento aos beneficiários ou rotinas laboratoriais.'
+      q: 'Por que diagnóstico antes da tecnologia?',
+      a: 'Nossa premissa central é que nenhum projeto de sucesso começa pela tecnologia. O diagnóstico mapeia a real raiz dos seus problemas, evitando que você invista tempo e dinheiro em soluções de software que não atacam os gargalos reais da sua operação.'
     },
     {
-      q: 'O que acontece após o término das 4 semanas?',
-      a: 'Com o Relatório Meta em mãos, sua diretoria terá um backlog pronto. Junto com o relatório, a iLiberty já entrega uma proposta comercial transparente para as fases de execução subsequentes (Ação + Resultado + Transformação), baseada em pacotes previsíveis de horas mensais (100h, 150h ou 200h) de acordo com o tamanho do seu desafio.'
+      q: 'Por onde começar com a iLiberty?',
+      a: 'Recomendamos começar pelo Discovery: o nosso diagnóstico estruturado de 4 semanas. É o formato de menor risco para a sua instituição obter clareza operacional completa, inventário detalhado de gargalos e estimativa realista de ROI.'
     },
     {
-      q: 'Por que o valor de entrada é tão acessível?',
-      a: 'O Discovery é precificado a partir de R$ 15.000,00 por ser o nosso produto de entrada, um valor cerca de 10x menor do que uma implementação tecnológica completa. Criamos esse formato para que você possa avaliar nossa qualidade técnica, nossa metodologia e o alinhamento do time antes de assumir compromissos contratuais de longo prazo. Sem contratos leoninos.'
+      q: 'O que acontece depois que vocês entregam o diagnóstico?',
+      a: 'Sua diretoria recebe o Relatório META com o backlog priorizado de melhorias. Junto, a iLiberty já entrega uma proposta comercial transparente para as fases subsequentes (Ação + Resultado + Transformação), com base em pacotes de horas mensais previsíveis de acordo com a sua necessidade.'
     }
   ];
 
   const smartSteps = [
     {
       letter: 'S',
-      title: 'Situação',
-      badge: 'Entregue no Discovery',
+      title: 'Onde você está hoje',
+      badge: 'Situação - Entregue no Discovery',
       description: 'Mapeamos como as suas áreas operam hoje (processos, interfaces e sistemas) e escancaramos os gargalos operacionais e desperdícios de custo, prazo e qualidade.'
     },
     {
       letter: 'M',
-      title: 'Meta',
-      badge: 'Entregue no Discovery',
+      title: 'Onde você precisa chegar',
+      badge: 'Meta - Entregue no Discovery',
       description: 'Consolidamos e priorizamos as oportunidades de melhoria com estimativas reais de impacto financeiro e o ROI esperado para o seu negócio.'
     },
     {
       letter: 'A',
-      title: 'Ação',
-      badge: 'Etapa Posterior',
+      title: 'Como chegamos lá',
+      badge: 'Ação - Etapa Posterior',
       description: 'Implementação prática das melhorias priorizadas através de automações RPA sob medida, integrações de APIs e revisão de processos.'
     },
     {
       letter: 'R',
-      title: 'Resultado',
-      badge: 'Etapa Posterior',
+      title: 'Como medimos no caminho',
+      badge: 'Resultado - Etapa Posterior',
       description: 'Monitoramento contínuo através de dashboards para garantir que a eficiência prometida chegue ao caixa.'
     },
     {
       letter: 'T',
-      title: 'Transformação',
-      badge: 'Etapa Posterior',
+      title: 'O que permanece depois',
+      badge: 'Transformação - Etapa Posterior',
       description: 'Consolidação de uma cultura de governança e inovação contínua, reduzindo a dependência operacional de pessoas específicas.'
     }
   ];
 
   const deliverables = [
-    { title: 'Mapeamento de Processos', desc: 'Documentação visual detalhada dos fluxos analisados por área, com responsáveis e sistemas envolvidos.' },
-    { title: 'Inventário de Gargalos', desc: 'Lista estruturada de riscos operacionais e desperdícios quantificados em horas e custos.' },
-    { title: 'Custo Operacional por Área', desc: 'Levantamento do custo anual real dos processos, servindo como a linha de base (baseline) para calcular o retorno financeiro.' },
-    { title: 'Backlog de Melhorias (+167 itens)', desc: 'Lista priorizada de ações divididas por tipo (Processo, Integração, Automação, Indicadores, Capacitação e Desenvolvimento).' },
-    { title: 'Estimativa de Impacto Financeiro', desc: 'Estudo do potencial de economia anual e horas recuperáveis por iniciativa.' },
-    { title: 'Roadmap de Implementação Sugerido', desc: 'Cronograma recomendado de execução priorizando ganhos rápidos (quick wins) e mudanças estruturantes.' },
-    { title: 'Apresentação Executiva (Relatório META)', desc: 'Relatório visual completo para apresentação à Diretoria e ao Conselho de Administração para embasar as decisões de investimento.' }
+    {
+      badge: 'CCE',
+      title: 'Planejamento e estratégia',
+      desc: 'O cérebro do método. Estratégia, indicadores, processos e plano de ação rodando no mesmo fluxo, todo dia.'
+    },
+    {
+      badge: 'COCKPIT',
+      title: 'Indicadores, BI e Decisão',
+      desc: 'O painel que a diretoria consulta. Decisão em tempo real, com drill-down do C-level até a linha de frente.'
+    },
+    {
+      badge: 'CUSTOS & ORÇAMENTO',
+      title: 'Custos e orçamento base-zero',
+      desc: 'Custos por atividade e orçamento base-zero num único sistema. A controladoria decide em tempo real, não no fechamento.'
+    },
+    {
+      badge: 'INTEGRADOR',
+      title: 'Integração & interoperabilidade',
+      desc: 'Conecta os sistemas que sua operação já usa, sem trocar tudo. Integração vira rotina, não projeto.'
+    },
+    {
+      badge: 'ORQUESTRADOR',
+      title: 'Automação, ROI e operação',
+      desc: 'Tarefas repetitivas saem da mão da equipe. Você acompanha o ROI de cada automação em tempo real.'
+    },
+    {
+      badge: 'LUMI.AI',
+      title: 'Estratégia, processos e governança',
+      desc: 'IA onde mais dói no caixa da operadora. Devolve tempo à equipe e recupera receita continuamente.'
+    },
+    {
+      badge: 'ILAB',
+      title: 'LIMS PARA LABORATÓRIO DE APOIO',
+      desc: 'Da venda online à entrega do laudo, num único fluxo. O módulo vertical da plataforma, com case publicado em escala nacional.'
+    }
   ];
 
   return (
@@ -211,12 +240,12 @@ export default function Discovery() {
         <div className="relative z-20 max-w-[1440px] mx-auto w-full flex flex-col items-center justify-center text-center">
           <FadeIn delay={150}>
             <span className="inline-block text-[11px] font-sans font-bold text-brand-dark uppercase tracking-[0.2em] mb-6 border-l-3 border-brand-cyan pl-3 text-left max-w-2xl">
-              EXCLUSIVO PARA DIRETORES, GESTORES E EXECUTIVOS DE OPERADORAS DE SAÚDE, HOSPITAIS E LABORATÓRIOS.
+              Como trabalhamos
             </span>
           </FadeIn>
 
           <FadeIn delay={300}>
-            <h1 className="font-sans font-bold text-brand-dark leading-[1.08] tracking-[-0.03em] max-w-5xl"
+            <h1 className="font-sans font-bold text-brand-dark leading-[1.08] tracking-[-0.03em] max-w-5xl text-center mx-auto"
               style={{ fontSize: 'clamp(2.1rem, 5.5vw, 60px)' }}>
               <span className="text-brand-cyan">Pare de investir</span> antes de entender onde sua operação está <span className="text-brand-cyan">vazando dinheiro.</span>
             </h1>
@@ -224,14 +253,14 @@ export default function Discovery() {
 
           <FadeIn delay={450}>
             <p className="text-text-secondary text-base sm:text-[18px] leading-[1.7] mt-6 max-w-3xl mx-auto font-sans font-medium">
-              Conheça o <strong>Discovery iLiberty</strong>: um diagnóstico operacional estruturado de 4 semanas que mapeia seus gargalos, quantifica seus desperdícios e entrega um plano de ação focado em retorno financeiro (ROI) antes de você mover uma única linha de código.
+              Antes de qualquer projeto, aplicamos um método estruturado em 5 etapas, nossa metodologia <strong>SMART</strong>, para entender exatamente onde está o problema. A tecnologia entra depois, sustentada pelo o UniConecta, a plataforma que conecta diagnóstico, decisão e operação.
             </p>
           </FadeIn>
 
           <FadeIn delay={600} className="w-full flex justify-center">
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full sm:w-auto">
               <CtaButton
-                text="Solicitar Reunião de Diagnóstico"
+                text="Falar com um Especialista"
                 onClick={() => {
                   const el = document.getElementById('discovery-form-section');
                   el?.scrollIntoView({ behavior: 'smooth' });
@@ -333,7 +362,7 @@ export default function Discovery() {
               <FadeIn delay={400} className="mt-8">
                 <div className="border-l-4 border-brand-cyan pl-5 bg-brand-bg/50 p-5 rounded-r-[12px] text-left">
                   <p className="text-sm sm:text-base leading-[1.65] font-semibold text-brand-dark font-sans">
-                    "Nossa premissa central é rígida: Nenhum projeto de sucesso começa pela tecnologia. O diagnóstico precisa vir antes de qualquer proposta de solução."
+                    "Nossa premissa central é inegociável: Nenhum projeto de sucesso começa pela tecnologia. O diagnóstico precisa vir antes de qualquer proposta de solução."
                   </p>
                 </div>
               </FadeIn>
@@ -390,6 +419,7 @@ export default function Discovery() {
                   <h3 className="text-base sm:text-md font-bold text-brand-dark font-sans uppercase tracking-wider">Processos manuais e retrabalho</h3>
                   <p className="text-sm text-text-secondary leading-relaxed mt-2 font-normal font-sans">
                     Uma operação crítica totalmente dependente de papéis, e-mails e planilhas paralelas, altamente sujeita a falhas humanas.
+
                   </p>
                 </div>
               </div>
@@ -404,6 +434,7 @@ export default function Discovery() {
                   <h3 className="text-base sm:text-md font-bold text-brand-dark font-sans uppercase tracking-wider">Tomada de decisão no escuro</h3>
                   <p className="text-sm text-text-secondary leading-relaxed mt-2 font-normal font-sans">
                     Sem indicadores centralizados e visibilidade em tempo real, sua diretoria toma decisões estratégicas baseadas em "achismo" ou emoção.
+
                   </p>
                 </div>
               </div>
@@ -427,20 +458,215 @@ export default function Discovery() {
         </div>
       </section>
 
-      {/* SEÇÃO 3: EXPLICAÇÃO E CONCEITO DO DISCOVERY */}
+      {/* SEÇÃO 4: METODOLOGIA SMART E ETAPAS DE TRANSFORMAÇÃO */}
+      <section id="jornada-smart" className="py-20 lg:py-32 bg-white px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+            <div className="lg:col-span-5 text-left flex flex-col items-start h-full">
+              <FadeIn delay={100}>
+                <Badge number="2" text="Nossa Metodologia" />
+              </FadeIn>
+
+              <FadeIn delay={200}>
+                <h2 className="font-sans font-bold text-brand-dark tracking-[-0.02em] leading-tight mt-5 mb-6"
+                  style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)' }}>
+                  Metodologia SMART: O Caminho da Transformação
+                </h2>
+                <p className="text-[17.6px] leading-[1.7] text-text-secondary font-sans font-normal mb-8">
+                  Nossa metodologia exclusiva de 5 etapas garante um mapeamento preciso e sem atrito, dividindo o processo de forma clara entre o diagnóstico imediato e as etapas de implementação futura.
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={300} className="w-full mt-auto relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-brand-cyan/15 to-brand-blue/15 rounded-[24px] blur-2xl opacity-60 -z-10 animate-pulse" />
+                <div className="relative z-10 w-full aspect-[16/10] rounded-tr-[50px] rounded-bl-[50px] rounded-tl-none rounded-br-none overflow-hidden border border-border-subtle/30 shadow-md bg-white">
+                  <img
+                    src="/assets/discovery_smart_team.png"
+                    alt="Equipe clínica de especialistas iLiberty operando sistemas"
+                    className="w-full h-full object-cover rounded-tr-[50px] rounded-bl-[50px] rounded-tl-none rounded-br-none transition-transform duration-750 hover:scale-103"
+                  />
+                </div>
+              </FadeIn>
+            </div>
+
+            <div className="lg:col-span-7 w-full text-left relative pl-0 lg:pl-8">
+              <div className="absolute left-[30px] lg:left-[38px] top-6 bottom-6 w-[2px] bg-brand-cyan/25 z-0" />
+
+              <div className="flex flex-col gap-8 relative z-10">
+                {smartSteps.map((step, index) => (
+                  <FadeIn key={index} delay={150 * (index + 1)} className="flex items-start relative group">
+                    <div className="w-[60px] h-[60px] rounded-full bg-white text-brand-cyan font-sans font-bold flex items-center justify-center text-2xl shrink-0 shadow-sm border-2 border-brand-cyan/35 group-hover:border-brand-cyan group-hover:scale-105 transition-all duration-300 z-10">
+                      {step.letter}
+                    </div>
+
+                    <div className="ml-6 flex flex-col items-start">
+                      <span className="text-[9px] text-brand-cyan font-bold tracking-widest uppercase mb-1 border border-brand-cyan/35 px-2 py-0.5 rounded-full bg-brand-cyan/5">
+                        {step.badge}
+                      </span>
+                      <h3 className="text-[18px] font-bold text-brand-dark mb-2 font-sans mt-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-text-secondary leading-relaxed max-w-xl font-sans font-normal">
+                        {step.description}
+                      </p>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 5: ENTREGÁVEIS E RESULTADOS DO DISCOVERY */}
+      <section id="discovery-deliverables" className="py-20 lg:py-32 bg-brand-bg px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
+        <div className="max-w-[1440px] mx-auto">
+          <FadeIn delay={100}>
+            <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-brand-cyan mb-5">
+              <span>[ UNICONECTA ]</span>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <h2 className="font-sans font-bold text-brand-dark tracking-[-0.02em] leading-tight mb-12 text-left"
+              style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)' }}>
+              A plataforma que sustenta o método em produção
+            </h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            {deliverables.slice(0, 6).map((item, index) => (
+              <FadeIn key={index} delay={100 * (index + 1)} className="flex">
+                <div className="bg-white border border-border-subtle/60 rounded-2xl p-6 sm:p-8 flex gap-5 text-left hover:shadow-md hover:scale-[1.02] hover:border-brand-cyan/20 transition-all duration-300 w-full group">
+                  <div className="w-10 h-10 rounded-full bg-brand-cyan/15 flex items-center justify-center text-brand-cyan flex-shrink-0 font-bold font-sans">
+                    0{index + 1}
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-brand-cyan font-bold tracking-widest uppercase block mb-1 font-sans">
+                      [{item.badge}]
+                    </span>
+                    <h3 className="text-base font-bold text-brand-dark font-sans uppercase tracking-wider mb-2">{item.title}</h3>
+                    <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">{item.desc}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+
+            <FadeIn delay={400} className="col-span-1 md:col-span-2 lg:col-span-3 flex">
+              <div className="bg-[#001E38] text-white border border-brand-cyan/35 rounded-2xl p-6 sm:p-10 flex flex-col md:flex-row gap-6 items-start md:items-center text-left hover:shadow-lg hover:border-brand-cyan transition-all duration-300 w-full group relative overflow-hidden">
+                <div className="absolute -right-16 -bottom-16 w-44 h-44 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="w-12 h-12 rounded-full bg-brand-cyan/20 border border-brand-cyan/30 text-brand-cyan flex items-center justify-center shrink-0 font-bold font-sans text-lg">
+                  07
+                </div>
+
+                <div className="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-6 w-full">
+                  <div className="max-w-3xl">
+                    <span className="text-[10px] text-brand-cyan font-bold tracking-widest uppercase mb-1.5 block font-sans">
+                      [{deliverables[6].badge}]
+                    </span>
+                    <h3 className="text-base sm:text-lg font-bold text-white font-sans uppercase tracking-wider mb-2">
+                      {deliverables[6].title}
+                    </h3>
+                    <p className="text-sm text-[#DBDBDB] leading-relaxed font-sans font-normal">
+                      {deliverables[6].desc}
+                    </p>
+                  </div>
+
+                  <Link to="/laboratorios" className="shrink-0 flex items-center gap-1.5 text-[10px] font-bold text-brand-cyan hover:text-white uppercase tracking-widest bg-brand-cyan/15 hover:bg-brand-cyan px-4 py-2.5 rounded-full border border-brand-cyan/30 transition-all duration-300">
+                    <span>CONHECER O ILAB</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 6: MÉTRICAS E RESULTADOS DE TRANSFORMAÇÃO */}
+      <section id="discovery-metrics" className="py-20 bg-white px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
+        <div className="max-w-[1440px] mx-auto">
+          <FadeIn delay={100}>
+            <Badge number="3" text="Métricas de Transformação" />
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-0 mt-12 border-t border-b border-border-subtle/70 py-16">
+
+            <div className="px-2 md:px-8 border-r-0 md:border-r border-border-subtle/70 last:border-r-0 text-left">
+              <FadeIn delay={200}>
+                <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
+                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+                  -90%
+                </div>
+                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Falhas & Retrabalhos</h4>
+                <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                  Redução drástica em erros operacionais e retrabalho manual das equipes mapeadas.
+                </p>
+              </FadeIn>
+            </div>
+
+            <div className="px-2 md:px-8 border-r-0 md:border-r border-border-subtle/70 last:border-r-0 text-left">
+              <FadeIn delay={300}>
+                <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
+                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+                  +40%
+                </div>
+                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Produtividade</h4>
+                <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                  Ganho substancial na produtividade geral das áreas operacionais integradas.
+                </p>
+              </FadeIn>
+            </div>
+
+            <div className="px-2 md:px-8 border-r-0 md:border-r border-border-subtle/70 last:border-r-0 text-left">
+              <FadeIn delay={400}>
+                <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
+                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+                  -25%
+                </div>
+                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Custo Direto</h4>
+                <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                  Economia nos custos operacionais diretos dos fluxos mapeados e reestruturados.
+                </p>
+              </FadeIn>
+            </div>
+
+            <div className="px-2 md:px-8 last:border-r-0 text-left">
+              <FadeIn delay={500}>
+                <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
+                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+                  100%
+                </div>
+                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Visibilidade</h4>
+                <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
+                  Controle absoluto e governança profunda para a tomada de decisão da alta diretoria.
+                </p>
+              </FadeIn>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 5B: EXPLICAÇÃO E CONCEITO DO DISCOVERY */}
       <section id="discovery-concept" className="py-20 lg:py-32 bg-[#F2F4F8] px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             <div className="lg:col-span-6 text-left">
               <FadeIn delay={100}>
-                <Badge number="2" text="O Conceito" />
+                <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-brand-cyan mb-5">
+                  <span>[ DISCOVERY ]</span>
+                </div>
               </FadeIn>
 
               <FadeIn delay={200}>
                 <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.02em] mb-6"
                   style={{ fontSize: 'clamp(1.75rem, 4vw, 2.6rem)', color: '#001E38' }}>
-                  O que é o Discovery iLiberty?
+                  Onde começar com a gente
                 </h2>
               </FadeIn>
 
@@ -449,7 +675,7 @@ export default function Discovery() {
                   O Discovery é o nosso produto de entrada de escopo fechado. Uma consultoria operacional acelerada conduzida por especialistas certificados em gestão de processos e saúde.
                 </p>
                 <p className="text-[17.6px] leading-[1.75] text-text-secondary font-sans font-semibold">
-                  Em um ciclo previsível de <strong>4 semanas</strong>, nós entramos na sua operação, analisamos seus fluxos locais ou remotos e desenhamos a anatomia dos seus gargalos. É uma porta de entrada de baixo custo e baixíssimo risco, projetada especificamente para dar à sua diretoria a segurança técnica necessária para saber exatamente onde intervir.
+                  Para grandes transformações, recomendamos começar pelo Discovery: um diagnóstico estruturado de 4 semanas que entrega a você e à sua diretoria a clareza completa sobre onde estão os gargalos, quanto custam e qual o ROI esperado de cada intervenção. É a porta de entrada de menor risco para começar uma jornada de transformação com a iLiberty.
                 </p>
               </FadeIn>
             </div>
@@ -457,7 +683,7 @@ export default function Discovery() {
             <div className="lg:col-span-6 w-full flex justify-center lg:justify-end">
               <FadeIn delay={400} className="w-full max-w-[500px]">
                 <div className="bg-[#001E38] text-white border border-brand-cyan/30 rounded-[24px] p-8 shadow-2xl flex flex-col gap-6 relative overflow-hidden text-left group hover:border-brand-cyan transition-all duration-300">
-                  <div className="absolute -top-16 -right-16 w-40 h-40 bg-brand-cyan/15 rounded-full blur-3xl pointer-events-none" />
+                  <div className="absolute -top-16 -right-16 w-44 h-44 bg-brand-cyan/15 rounded-full blur-3xl pointer-events-none" />
                   <div className="absolute -bottom-20 -left-20 w-44 h-44 bg-brand-blue/15 rounded-full blur-3xl pointer-events-none" />
 
                   <div className="flex items-center justify-between border-b border-white/10 pb-5 z-10">
@@ -532,202 +758,14 @@ export default function Discovery() {
         </div>
       </section>
 
-      {/* SEÇÃO 4: METODOLOGIA SMART E ETAPAS DE TRANSFORMAÇÃO */}
-      <section id="jornada-smart" className="py-20 lg:py-32 bg-white px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-
-            <div className="lg:col-span-5 text-left flex flex-col items-start h-full">
-              <FadeIn delay={100}>
-                <Badge number="3" text="Nossa Metodologia" />
-              </FadeIn>
-
-              <FadeIn delay={200}>
-                <h2 className="font-sans font-bold text-brand-dark tracking-[-0.02em] leading-tight mt-5 mb-6"
-                  style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)' }}>
-                  Metodologia SMART: O Caminho da Transformação
-                </h2>
-                <p className="text-[17.6px] leading-[1.7] text-text-secondary font-sans font-normal mb-8">
-                  Nossa metodologia exclusiva de 5 etapas garante um mapeamento preciso e sem atrito, dividindo o processo de forma clara entre o diagnóstico imediato e as etapas de implementação futura.
-                </p>
-              </FadeIn>
-
-              <FadeIn delay={300} className="w-full mt-auto relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-brand-cyan/15 to-brand-blue/15 rounded-[24px] blur-2xl opacity-60 -z-10 animate-pulse" />
-                <div className="relative z-10 w-full aspect-[16/10] rounded-tr-[50px] rounded-bl-[50px] rounded-tl-none rounded-br-none overflow-hidden border border-border-subtle/30 shadow-md bg-white">
-                  <img
-                    src="/assets/discovery_smart_team.png"
-                    alt="Equipe clínica de especialistas iLiberty operando sistemas"
-                    className="w-full h-full object-cover rounded-tr-[50px] rounded-bl-[50px] rounded-tl-none rounded-br-none transition-transform duration-750 hover:scale-103"
-                  />
-                </div>
-              </FadeIn>
-            </div>
-
-            <div className="lg:col-span-7 w-full text-left relative pl-0 lg:pl-8">
-              <div className="absolute left-[30px] lg:left-[38px] top-6 bottom-6 w-[2px] bg-brand-cyan/25 z-0" />
-
-              <div className="flex flex-col gap-8 relative z-10">
-                {smartSteps.map((step, index) => (
-                  <FadeIn key={index} delay={150 * (index + 1)} className="flex items-start relative group">
-                    <div className="w-[60px] h-[60px] rounded-full bg-white text-brand-cyan font-sans font-bold flex items-center justify-center text-2xl shrink-0 shadow-sm border-2 border-brand-cyan/35 group-hover:border-brand-cyan group-hover:scale-105 transition-all duration-300 z-10">
-                      {step.letter}
-                    </div>
-
-                    <div className="ml-6 flex flex-col items-start">
-                      <span className="text-[9px] text-brand-cyan font-bold tracking-widest uppercase mb-1 border border-brand-cyan/35 px-2 py-0.5 rounded-full bg-brand-cyan/5">
-                        {step.badge}
-                      </span>
-                      <h3 className="text-[18px] font-bold text-brand-dark mb-2 font-sans mt-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm text-text-secondary leading-relaxed max-w-xl font-sans font-normal">
-                        {step.description}
-                      </p>
-                    </div>
-                  </FadeIn>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO 5: ENTREGÁVEIS E RESULTADOS DO DISCOVERY */}
-      <section id="discovery-deliverables" className="py-20 lg:py-32 bg-brand-bg px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
-        <div className="max-w-[1440px] mx-auto">
-          <FadeIn delay={100}>
-            <Badge number="4" text="Entregáveis" />
-          </FadeIn>
-
-          <FadeIn delay={200}>
-            <h2 className="font-sans font-bold text-brand-dark tracking-[-0.02em] leading-tight mb-12 text-left"
-              style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)' }}>
-              7 Entregáveis Fixos e Padronizados
-            </h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            {deliverables.slice(0, 6).map((item, index) => (
-              <FadeIn key={index} delay={100 * (index + 1)} className="flex">
-                <div className="bg-white border border-border-subtle/60 rounded-2xl p-6 sm:p-8 flex gap-5 text-left hover:shadow-md hover:scale-[1.02] hover:border-brand-cyan/20 transition-all duration-300 w-full group">
-                  <div className="w-10 h-10 rounded-full bg-brand-cyan/15 flex items-center justify-center text-brand-cyan flex-shrink-0 font-bold font-sans">
-                    0{index + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-brand-dark font-sans uppercase tracking-wider mb-2">{item.title}</h3>
-                    <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">{item.desc}</p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-
-            <FadeIn delay={400} className="col-span-1 md:col-span-2 lg:col-span-3 flex">
-              <div className="bg-[#001E38] text-white border border-brand-cyan/35 rounded-2xl p-6 sm:p-10 flex flex-col md:flex-row gap-6 items-start md:items-center text-left hover:shadow-lg hover:border-brand-cyan transition-all duration-300 w-full group relative overflow-hidden">
-                <div className="absolute -right-16 -bottom-16 w-44 h-44 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none" />
-
-                <div className="w-12 h-12 rounded-full bg-brand-cyan/20 border border-brand-cyan/30 text-brand-cyan flex items-center justify-center shrink-0 font-bold font-sans text-lg">
-                  07
-                </div>
-
-                <div className="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-6 w-full">
-                  <div className="max-w-3xl">
-                    <span className="text-[10px] text-brand-cyan font-bold tracking-widest uppercase mb-1.5 block font-sans">
-                      [ O Entregável de Maior Impacto ]
-                    </span>
-                    <h3 className="text-base sm:text-lg font-bold text-white font-sans uppercase tracking-wider mb-2">
-                      {deliverables[6].title}
-                    </h3>
-                    <p className="text-sm text-[#DBDBDB] leading-relaxed font-sans font-normal">
-                      {deliverables[6].desc}
-                    </p>
-                  </div>
-
-                  <div className="shrink-0 flex items-center gap-1.5 text-[10px] font-bold text-brand-cyan uppercase tracking-widest bg-brand-cyan/15 px-4 py-2.5 rounded-full border border-brand-cyan/20">
-                    <span>Síntese Estratégica</span>
-                    <span className="text-xs font-black">➔</span>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO 6: MÉTRICAS E RESULTADOS DE TRANSFORMAÇÃO */}
-      <section id="discovery-metrics" className="py-20 bg-white px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
-        <div className="max-w-[1440px] mx-auto">
-          <FadeIn delay={100}>
-            <Badge number="5" text="Métricas de Transformação" />
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-0 mt-12 border-t border-b border-border-subtle/70 py-16">
-
-            <div className="px-2 md:px-8 border-r-0 md:border-r border-border-subtle/70 last:border-r-0 text-left">
-              <FadeIn delay={200}>
-                <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
-                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
-                  -90%
-                </div>
-                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Falhas & Retrabalhos</h4>
-                <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                  Redução drástica em erros operacionais e retrabalho manual das equipes mapeadas.
-                </p>
-              </FadeIn>
-            </div>
-
-            <div className="px-2 md:px-8 border-r-0 md:border-r border-border-subtle/70 last:border-r-0 text-left">
-              <FadeIn delay={300}>
-                <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
-                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
-                  +40%
-                </div>
-                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Produtividade</h4>
-                <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                  Ganho substancial na produtividade geral das áreas operacionais integradas.
-                </p>
-              </FadeIn>
-            </div>
-
-            <div className="px-2 md:px-8 border-r-0 md:border-r border-border-subtle/70 last:border-r-0 text-left">
-              <FadeIn delay={400}>
-                <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
-                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
-                  -25%
-                </div>
-                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Custo Direto</h4>
-                <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                  Economia nos custos operacionais diretos dos fluxos mapeados e reestruturados.
-                </p>
-              </FadeIn>
-            </div>
-
-            <div className="px-2 md:px-8 last:border-r-0 text-left">
-              <FadeIn delay={500}>
-                <div className="text-brand-cyan font-bold font-sans tracking-tight mb-3"
-                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
-                  100%
-                </div>
-                <h4 className="text-md font-bold text-brand-dark mb-2 uppercase tracking-wider">Visibilidade</h4>
-                <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                  Controle absoluto e governança profunda para a tomada de decisão da alta diretoria.
-                </p>
-              </FadeIn>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO: PROVAS E RESULTADOS (CASE UNIMED AVARÉ) */}
+      {/* SEÇÃO: PROVAS E RESULTADOS (CASE UNIMED AVARÉ) - COMENTADO TEMPORARIAMENTE
       <section id="discovery-case" className="py-20 lg:py-32 bg-white px-6 lg:px-12 border-b border-border-subtle relative z-30">
         <div className="max-w-[1440px] mx-auto">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
             <div className="lg:col-span-7 text-left">
               <FadeIn delay={100}>
-                <Badge number="6" text="Provas e Resultados" />
+                <Badge number="4" text="Provas e Resultados" />
               </FadeIn>
 
               <FadeIn delay={200}>
@@ -830,13 +868,16 @@ export default function Discovery() {
 
         </div>
       </section>
+      */ }
 
       {/* SEÇÃO: PERGUNTAS FREQUENTES (FAQ) */}
       <section id="discovery-faq" className="py-20 lg:py-32 bg-[#F2F4F8] px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col items-center text-center mb-16">
             <FadeIn delay={100}>
-              <Badge number="7" text="Perguntas Frequentes" />
+              <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-brand-cyan mb-5">
+                <span>[ PERGUNTAS FREQUENTES ]</span>
+              </div>
             </FadeIn>
 
             <FadeIn delay={200}>
@@ -888,21 +929,22 @@ export default function Discovery() {
             <div className="lg:col-span-5 flex flex-col items-start text-left">
               <FadeIn delay={100}>
                 <span className="text-brand-cyan uppercase text-xs tracking-[0.2em] font-bold block mb-5">
-                  [ ELEGIBILIDADE E RETORNO ]
+                  [ Próximo Passo ]
                 </span>
               </FadeIn>
 
               <FadeIn delay={200}>
                 <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-brand-cyan pl-5"
                   style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#001E38' }}>
-                  Avalie a elegibilidade de sua instituição.
+                  Vamos descobrir, juntos, por onde começar
+
                 </h2>
               </FadeIn>
 
               <div className="mt-5">
                 <FadeIn delay={300}>
                   <p className="text-text-secondary text-base leading-[1.7] max-w-xl font-sans font-normal">
-                    Inscreva sua empresa para uma avaliação de elegibilidade do Discovery. Nosso time de engenharia operacional analisará os dados estruturais enviados antes da nossa primeira reunião estratégica.
+                    Em uma conversa de 30 minutos, entendemos o seu contexto e indicamos o ponto de entrada mais adequado - Discovery, engajamento direto ou outro caminho. Sem proposta pronta, sem produto empurrado.
                   </p>
                 </FadeIn>
               </div>
