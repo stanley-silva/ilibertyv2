@@ -16,17 +16,24 @@ export default function Home() {
     { src: '/assets/logos/logo_parceiros_2.webp', alt: 'Logo São Francisco' },
     { src: '/assets/logos/logo_parceiros_3.webp', alt: 'Logo Clinicas' },
     { src: '/assets/logos/logo_parceiros_4.webp', alt: 'Logo Unimed Lins' },
-    { src: '/assets/logos/logo_parceiros_5.webp', alt: 'Logo Santa Casa' }
+    { src: '/assets/logos/logo_parceiros_5.webp', alt: 'Logo Santa Casa' },
+    { src: '/assets/logos/logo_parceiros_6.webp', alt: 'Logo Parceiro 6' },
+    { src: '/assets/logos/logo_parceiros_7.webp', alt: 'Logo Parceiro 7' },
+    { src: '/assets/logos/logo_parceiros_8.webp', alt: 'Logo Parceiro 8' },
+    { src: '/assets/logos/logo_parceiros_9.webp', alt: 'Logo Parceiro 9' },
+    { src: '/assets/logos/logo_parceiros_10.webp', alt: 'Logo Parceiro 10' },
+    { src: '/assets/logos/logo_parceiros_11.webp', alt: 'Logo Parceiro 11' }
   ];
 
+  const logoCount = partnerLogos.length;
   const extendedLogos = [...partnerLogos, ...partnerLogos, ...partnerLogos];
 
-  const [currentIndex, setCurrentIndex] = useState(5);
+  const [currentIndex, setCurrentIndex] = useState(logoCount);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [visibleCount, setVisibleCount] = useState(5);
   const [autoplayKey, setAutoplayKey] = useState(0);
 
-  const activeDot = ((currentIndex - 5) % 5 + 5) % 5;
+  const activeDot = ((currentIndex - logoCount) % logoCount + logoCount) % logoCount;
 
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -92,18 +99,18 @@ export default function Home() {
   }, [transitionEnabled]);
 
   const handleTransitionEnd = () => {
-    if (currentIndex >= 10) {
+    if (currentIndex >= logoCount * 2) {
       setTransitionEnabled(false);
-      setCurrentIndex(currentIndex - 5);
-    } else if (currentIndex < 5) {
+      setCurrentIndex(currentIndex - logoCount);
+    } else if (currentIndex < logoCount) {
       setTransitionEnabled(false);
-      setCurrentIndex(currentIndex + 5);
+      setCurrentIndex(currentIndex + logoCount);
     }
   };
 
   const handleDotClick = (index: number) => {
     setTransitionEnabled(true);
-    setCurrentIndex(5 + index);
+    setCurrentIndex(logoCount + index);
     setAutoplayKey((prev) => prev + 1);
   };
 
@@ -178,7 +185,7 @@ export default function Home() {
                 />
                 <CtaButton
                   text="Como trabalhamos"
-                  to="/discovery"
+                  to="/como-trabalhamos"
                   variant="secondary"
                 />
               </div>
@@ -257,7 +264,7 @@ export default function Home() {
               </FadeIn>
               <FadeIn delay={300}>
                 <p className="text-[17.6px] leading-[1.8] text-text-secondary font-normal font-sans">
-                  Porque o mercado tenta encaixar a sua operação em softwares engessados, em vez de moldar a tecnologia ao seu processo. O resultado? Sistemas que não se conversam, dados descentralizados, glosas médicas crescentes e equipes sobrecarregadas com retrabalho manual.
+                  Porque o mercado tenta encaixar a sua operação em softwares engessados, em vez de moldar a tecnologia ao seu processo. O resultado? Sistemas que não se conversam, dados descentralizados, glosas crescentes e equipes sobrecarregadas com retrabalho manual.
                 </p>
                 <p className="text-[17.6px] leading-[1.8] text-text-secondary font-medium mt-6 border-l-4 border-brand-cyan pl-5 bg-brand-bg/30 py-3 pr-4 rounded-r-[4px]">
                   Na iLiberty, fazemos o oposto: primeiro mapeamos onde a sua operação perde dinheiro e tempo, com um diagnóstico preciso. Só então conectamos as soluções certas, integradas num único ecossistema, ao seu processo. A tecnologia se adapta a você, e não o contrário.
@@ -428,7 +435,7 @@ export default function Home() {
 
           {/* Indicadores de paginação */}
           <div className="flex items-center justify-start gap-2 mt-10 pl-1">
-            {[0, 1, 2, 3, 4].map((idx) => {
+            {Array.from({ length: logoCount }).map((_, idx) => {
               const isActive = activeDot === idx;
               return (
                 <button
@@ -649,6 +656,7 @@ export default function Home() {
                     <ContactForm
                       buttonText="Quero falar com um especialista"
                       onSubmitSuccess={() => setSubmitted(true)}
+                      showPorte={false}
                     />
                   )}
                 </div>

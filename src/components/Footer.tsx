@@ -19,23 +19,24 @@ export default function Footer() {
               className="h-10 w-auto object-contain brightness-0 invert"
             />
           </Link>
-          <p className="text-[#DBDBDB] text-[15px] leading-relaxed max-w-sm">
-            Simplificamos o complexo. Eliminamos reentradas, reduzimos glosas e impulsionamos a governança operacional com tecnologia sob medida B2B para o setor de saúde.
+          <p className="text-[#DBDBDB] text-[15px] leading-relaxed max-w-sm font-sans">
+            Simplificamos o que trava. Aceleramos o que importa.<br />
+            Tecnologia consultiva para destravar a operação no setor de saúde.
           </p>
-          <div className="text-xs text-white/40 mt-2">
+          <div className="text-xs text-white/40 mt-2 font-sans">
             iLiberty Tecnologia da Informação LTDA
           </div>
         </div>
 
         {/* COLUNA 2: NAVEGAÇÃO RÁPIDA */}
         <div className="flex flex-col gap-6">
-          <h4 className="text-[#00AECC] font-bold text-sm uppercase tracking-wider">Links Rápidos</h4>
-          <ul className="flex flex-col gap-3">
+          <h4 className="text-[#00AECC] font-bold text-sm uppercase tracking-wider font-sans">LINKS RÁPIDOS</h4>
+          <ul className="flex flex-col gap-3 font-sans">
             {[
               { name: 'Home', path: '/' },
-              { name: 'Cooperativas & Hospitais', path: '/cooperativas' },
+              { name: 'Operadoras & Cooperativas de Saúde', path: '/cooperativas' },
               { name: 'Laboratórios de Apoio', path: '/laboratorios' },
-              { name: 'Discovery', path: '/discovery' },
+              { name: 'Como trabalhamos', path: '/como-trabalhamos' },
               { name: 'Sobre Nós', path: '/sobre' },
               { name: 'Fale Conosco', path: '/contato' },
             ].map((link, idx) => (
@@ -44,7 +45,7 @@ export default function Footer() {
                   to={link.path}
                   className="group flex items-center gap-1.5 text-[#DBDBDB] hover:text-[#00AECC] transition-colors text-[15px]"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-[#00AECC] transform transition-transform group-hover:translate-x-1" />
+                  <span className="text-[#00AECC] transition-transform group-hover:translate-x-0.5">&gt;</span>
                   <span>{link.name}</span>
                 </Link>
               </li>
@@ -52,10 +53,10 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* COLUNA 3: ESCRITÓRIO E CONTATOS CHAVE */}
+        {/* COLUNA 3: ESCRITÓRIO E CONTATO */}
         <div className="flex flex-col gap-6">
-          <h4 className="text-[#00AECC] font-bold text-sm uppercase tracking-wider">Diretoria & Escritório</h4>
-          <div className="flex flex-col gap-4 text-[#DBDBDB] text-[15px]">
+          <h4 className="text-[#00AECC] font-bold text-sm uppercase tracking-wider font-sans">ESCRITÓRIO & CONTATO</h4>
+          <div className="flex flex-col gap-6 text-[#DBDBDB] text-[15px] font-sans">
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#00AECC] shrink-0 mt-0.5" />
               <div>
@@ -68,14 +69,8 @@ export default function Footer() {
             <div className="flex items-start gap-3">
               <User className="w-5 h-5 text-[#00AECC] shrink-0 mt-0.5" />
               <div>
-                <p className="text-white font-medium">Diretoria Comercial</p>
-                <p className="text-sm text-white/70">Rafael Borges</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 border-t border-white/10 pt-4 mt-2">
-              <div className="text-xs text-white/50">
-                <p>Segmentação Avançada de Saúde & Integrações de LIMS/ERP</p>
+                <p className="text-white font-medium">Vendas</p>
+                <p className="text-sm text-white/70">comercial@iliberty.com.br</p>
               </div>
             </div>
           </div>
@@ -84,13 +79,8 @@ export default function Footer() {
       </div>
 
       {/* ASSINATURA E DIREITOS AUTORAIS */}
-      <div className="border-t border-white/10 pt-8 max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#DBDBDB]/60">
+      <div className="border-t border-white/10 pt-8 max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#DBDBDB]/60 font-sans">
         <p>© {currentYear} iLiberty Tecnologia. Todos os direitos reservados.</p>
-        <div className="flex items-center gap-6">
-          <span>Soluções Inteligentes</span>
-          <span className="w-1 h-1 bg-[#00AECC] rounded-full" />
-          <span>Implantações Ágeis</span>
-        </div>
       </div>
     </footer>
   );

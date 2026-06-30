@@ -8,7 +8,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Cooperativas from './pages/Cooperativas';
 import Laboratorios from './pages/Laboratorios';
-import Discovery from './pages/Discovery';
+import ComoTrabalhamos from './pages/ComoTrabalhamos';
 import Sobre from './pages/Sobre';
 import Contato from './pages/Contato';
 
@@ -28,7 +28,9 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cooperativas" element={<Cooperativas />} />
             <Route path="/laboratorios" element={<Laboratorios />} />
-            <Route path="/discovery" element={<Discovery />} />
+            <Route path="/como-trabalhamos" element={<ComoTrabalhamos />} />
+            {/* Redirecionamento da rota antiga */}
+            <Route path="/discovery" element={<Navigate to="/como-trabalhamos" replace />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />
             

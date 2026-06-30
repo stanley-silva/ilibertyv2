@@ -16,7 +16,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Cooperativas & Hospitais', path: '/cooperativas' },
     { name: 'Laboratórios', path: '/laboratorios' },
-    { name: 'Discovery', path: '/discovery' },
+    { name: 'Como trabalhamos', path: '/como-trabalhamos' },
     { name: 'Sobre Nós', path: '/sobre' },
     { name: 'Contato', path: '/contato' },
   ];

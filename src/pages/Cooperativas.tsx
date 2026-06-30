@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Unlink, EyeOff, ShieldAlert, ClipboardCheck, FileSearch, TrendingUp } from 'lucide-react';
 import CtaButton from '../components/CtaButton';
 import Badge from '../components/Badge';
@@ -13,6 +13,103 @@ export default function Cooperativas() {
     title: 'TI para Cooperativas de Saúde e Hospitais',
     description: 'Integração de sistemas legados, governança de dados assistenciais, conciliação e redução de glosas para Unimeds e grandes hospitais. Veja nosso caso de sucesso.'
   });
+
+  const partnerLogos = [
+    { src: '/assets/logos/logo_parceiros_1.webp', alt: 'Logo Unimed' },
+    { src: '/assets/logos/logo_parceiros_2.webp', alt: 'Logo São Francisco' },
+    { src: '/assets/logos/logo_parceiros_3.webp', alt: 'Logo Clinicas' },
+    { src: '/assets/logos/logo_parceiros_4.webp', alt: 'Logo Unimed Lins' },
+    { src: '/assets/logos/logo_parceiros_5.webp', alt: 'Logo Santa Casa' }
+  ];
+
+  const logoCount = partnerLogos.length;
+  const extendedLogos = [...partnerLogos, ...partnerLogos, ...partnerLogos];
+
+  const [currentIndex, setCurrentIndex] = useState(logoCount);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(5);
+  const [autoplayKey, setAutoplayKey] = useState(0);
+
+  const activeDot = ((currentIndex - logoCount) % logoCount + logoCount) % logoCount;
+
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      setTransitionEnabled(true);
+      setCurrentIndex((prev) => prev + 1);
+      setAutoplayKey((prev) => prev + 1);
+    } else if (isRightSwipe) {
+      setTransitionEnabled(true);
+      setCurrentIndex((prev) => prev - 1);
+      setAutoplayKey((prev) => prev + 1);
+    }
+  };
+
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCount(5);
+      } else if (window.innerWidth >= 768) {
+        setVisibleCount(3);
+      } else {
+        setVisibleCount(1);
+      }
+    };
+    updateVisibleCount();
+    window.addEventListener('resize', updateVisibleCount);
+    return () => window.removeEventListener('resize', updateVisibleCount);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTransitionEnabled(true);
+      setCurrentIndex((prev) => prev + 1);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [autoplayKey]);
+
+  useEffect(() => {
+    if (!transitionEnabled) {
+      const raf = requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTransitionEnabled(true);
+        });
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [transitionEnabled]);
+
+  const handleTransitionEnd = () => {
+    if (currentIndex >= logoCount * 2) {
+      setTransitionEnabled(false);
+      setCurrentIndex(currentIndex - logoCount);
+    } else if (currentIndex < logoCount) {
+      setTransitionEnabled(false);
+      setCurrentIndex(currentIndex + logoCount);
+    }
+  };
+
+  const handleDotClick = (index: number) => {
+    setTransitionEnabled(true);
+    setCurrentIndex(logoCount + index);
+    setAutoplayKey((prev) => prev + 1);
+  };
 
   return (
     <div id="cooperativas-page" className="w-full pt-20 bg-white">
@@ -165,7 +262,7 @@ export default function Cooperativas() {
                     <ShieldAlert className="w-5 h-5" />
                   </div>
                   <h3 className="text-md font-bold text-brand-dark mb-4 font-sans uppercase tracking-wider">
-                    Risco de Glosa e Fraude
+                    Risco de Glosa e Vazamento
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
                     Sem rastreabilidade fim a fim e com o cruzamento de dados feito tarde demais, vazamentos financeiros viram rotina, e a glosa, inevitável.
@@ -220,7 +317,7 @@ export default function Cooperativas() {
                     Auditoria de Contas Médicas
                   </h3>
                   <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                    Levamos aauditoria de contas da amostragem para a cobertura plena, com cruzamento inteligente de dados, identificação de inconsistências e priorização do que de fato impacta o caixa.
+                    Levamos a auditoria de contas da amostragem para a cobertura plena, com cruzamento inteligente de dados, identificação de inconsistências e priorização do que de fato impacta o caixa.
                   </p>
                 </div>
               </div>
@@ -315,7 +412,7 @@ export default function Cooperativas() {
                   <div className="relative group overflow-hidden rounded-[24px]">
                     <img
                       id="case-study-showcase-img"
-                      src="/assets/unimed_avare.webp"
+                      src="/assets/foto_unimed_dracena.webp"
                       alt="Healthcare dynamic analytics and dashboard"
                       className="w-full h-auto object-contain rounded-[24px] transition-transform duration-750 group-hover:scale-102"
                     />
@@ -325,6 +422,68 @@ export default function Cooperativas() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 4.5: PARCEIROS E CLIENTES ATENDIDOS */}
+      <section id="coop-partners" className="py-20 bg-brand-bg px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
+        <div className="max-w-[1440px] mx-auto">
+
+          <div className="flex flex-col items-start text-left mb-12">
+            <FadeIn delay={100}>
+              <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-[#00995D] mb-5">
+                <span>[ Nossos Clientes ]</span>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={200}>
+              <h2 className="font-sans font-bold text-brand-dark leading-[1.12] tracking-[-0.02em] border-l-4 border-[#00995D] pl-5"
+                style={{ fontSize: 'clamp(1.75rem, 4.2vw, 2.8rem)' }}>
+                Quem Impactamos
+              </h2>
+            </FadeIn>
+          </div>
+
+          <div className="overflow-hidden w-full mt-8 py-4 -my-4 relative select-none">
+            <div
+              className={`flex w-full ${transitionEnabled ? 'transition-transform duration-700 ease-in-out' : ''}`}
+              style={{
+                transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`,
+              }}
+              onTransitionEnd={handleTransitionEnd}
+            >
+              {extendedLogos.map((logo, idx) => (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 px-3 w-full md:w-1/3 lg:w-1/5 flex justify-center"
+                >
+                  <div className="bg-white border border-border-subtle/50 rounded-[16px] p-5 flex items-center justify-center w-full aspect-[4/3] sm:aspect-[1.2] shadow-xs hover:shadow-md hover:scale-105 transition-all duration-300 group">
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-h-[65px] max-w-[90%] object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-start gap-2 mt-10 pl-1">
+            {Array.from({ length: logoCount }).map((_, idx) => {
+              const isActive = activeDot === idx;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => handleDotClick(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${isActive ? 'w-8 bg-[#00995D]' : 'w-2 bg-[#606266]/20 hover:bg-[#606266]/40'
+                    }`}
+                  aria-label={`Ir para o slide ${idx + 1}`}
+                />
+              );
+            })}
+          </div>
+
         </div>
       </section>
 
@@ -371,9 +530,10 @@ export default function Cooperativas() {
                     </div>
                   ) : (
                     <ContactForm
-                      buttonText="Transformar a Operação da minha Cooperativa"
+                      buttonText="Falar com um especialista"
                       onSubmitSuccess={() => setSubmitted(true)}
                       themeColor="green"
+                      showPorte={false}
                     />
                   )}
                 </div>

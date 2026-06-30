@@ -163,20 +163,20 @@ export default function Sobre() {
         <div className="max-w-[1440px] mx-auto relative z-10 flex flex-col items-center">
           <FadeIn delay={100}>
             <span className="text-[#00AECC] uppercase text-xs tracking-widest font-bold mb-4 block">
-              Contato Estratégico
+              Próximo Passo
             </span>
           </FadeIn>
 
           <FadeIn delay={200}>
             <h2 className="font-sans font-medium mb-6 text-[#FFFFFF] leading-tight tracking-[-0.01em] max-w-3xl mx-auto"
               style={{ fontSize: 'clamp(1.75rem, 4.5vw, 2.8rem)' }}>
-              Escreva-se com uma empresa que compreende verdadeiramente o seu setor.
+              Vamos começar com uma conversa
             </h2>
           </FadeIn>
 
           <FadeIn delay={350}>
             <CtaButton
-              text="Falar com a nossa Diretoria Executiva"
+              text="Falar com um especialista"
               to="/contato"
               variant="primary"
             />

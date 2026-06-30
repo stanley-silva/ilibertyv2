@@ -32,14 +32,14 @@ import FadeIn from '../components/FadeIn';
 import useSeo from '../hooks/useSeo';
 import ContactForm from '../components/ContactForm';
 
-export default function Discovery() {
+export default function ComoTrabalhamos() {
   const [submitted, setSubmitted] = useState(false);
   const [submittedName, setSubmittedName] = useState('');
 
   const [faqExpanded, setFaqExpanded] = useState<number | null>(null);
 
   useSeo({
-    title: 'Discovery iLiberty - Diagnóstico Operacional e ROI para Saúde',
+    title: 'Como trabalhamos - iLiberty - Diagnóstico Operacional e ROI para Saúde',
     description: 'Diagnóstico estruturado de 4 semanas que mapeia gargalos operacionais e financeiros em cooperativas, hospitais e laboratórios com foco em ROI real.'
   });
 
@@ -48,17 +48,24 @@ export default function Discovery() {
     { src: '/assets/logos/logo_parceiros_2.webp', alt: 'Logo São Francisco' },
     { src: '/assets/logos/logo_parceiros_3.webp', alt: 'Logo Clinicas' },
     { src: '/assets/logos/logo_parceiros_4.webp', alt: 'Logo Unimed Lins' },
-    { src: '/assets/logos/logo_parceiros_5.webp', alt: 'Logo Santa Casa' }
+    { src: '/assets/logos/logo_parceiros_5.webp', alt: 'Logo Santa Casa' },
+    { src: '/assets/logos/logo_parceiros_6.webp', alt: 'Logo Parceiro 6' },
+    { src: '/assets/logos/logo_parceiros_7.webp', alt: 'Logo Parceiro 7' },
+    { src: '/assets/logos/logo_parceiros_8.webp', alt: 'Logo Parceiro 8' },
+    { src: '/assets/logos/logo_parceiros_9.webp', alt: 'Logo Parceiro 9' },
+    { src: '/assets/logos/logo_parceiros_10.webp', alt: 'Logo Parceiro 10' },
+    { src: '/assets/logos/logo_parceiros_11.webp', alt: 'Logo Parceiro 11' }
   ];
 
+  const logoCount = partnerLogos.length;
   const extendedLogos = [...partnerLogos, ...partnerLogos, ...partnerLogos];
 
-  const [currentIndex, setCurrentIndex] = useState(5);
+  const [currentIndex, setCurrentIndex] = useState(logoCount);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [visibleCount, setVisibleCount] = useState(5);
   const [autoplayKey, setAutoplayKey] = useState(0);
 
-  const activeDot = ((currentIndex - 5) % 5 + 5) % 5;
+  const activeDot = ((currentIndex - logoCount) % logoCount + logoCount) % logoCount;
 
   useEffect(() => {
     const updateVisibleCount = () => {
@@ -95,18 +102,18 @@ export default function Discovery() {
   }, [transitionEnabled]);
 
   const handleTransitionEnd = () => {
-    if (currentIndex >= 10) {
+    if (currentIndex >= logoCount * 2) {
       setTransitionEnabled(false);
-      setCurrentIndex(currentIndex - 5);
-    } else if (currentIndex < 5) {
+      setCurrentIndex(currentIndex - logoCount);
+    } else if (currentIndex < logoCount) {
       setTransitionEnabled(false);
-      setCurrentIndex(currentIndex + 5);
+      setCurrentIndex(currentIndex + logoCount);
     }
   };
 
   const handleDotClick = (index: number) => {
     setTransitionEnabled(true);
-    setCurrentIndex(5 + index);
+    setCurrentIndex(logoCount + index);
     setAutoplayKey((prev) => prev + 1);
   };
 
@@ -168,7 +175,7 @@ export default function Discovery() {
 
   const deliverables = [
     {
-      badge: 'CCE',
+      badge: 'COE',
       title: 'Planejamento e estratégia',
       desc: 'O cérebro do método. Estratégia, indicadores, processos e plano de ação rodando no mesmo fluxo, todo dia.'
     },
@@ -205,10 +212,10 @@ export default function Discovery() {
   ];
 
   return (
-    <div id="discovery-page" className="w-full pt-20 bg-white">
+    <div id="como-trabalhamos-page" className="w-full pt-20 bg-white">
 
       {/* SEÇÃO 1: APRESENTAÇÃO (HERO) */}
-      <section id="discovery-hero" className="relative min-h-[80vh] bg-brand-bg flex items-center justify-center overflow-hidden px-6 lg:px-12 py-20 lg:py-28 border-b border-border-subtle z-30">
+      <section id="como-trabalhamos-hero" className="relative min-h-[80vh] bg-brand-bg flex items-center justify-center overflow-hidden px-6 lg:px-12 py-20 lg:py-28 border-b border-border-subtle z-30">
 
         {/* Shader animado de fundo com tom azul ciano */}
         <AnimatedShader accentColor="#00AECC" />
@@ -255,7 +262,7 @@ export default function Discovery() {
 
           <FadeIn delay={450}>
             <p className="text-text-secondary text-base sm:text-[18px] leading-[1.7] mt-6 max-w-3xl mx-auto font-sans font-medium">
-              Antes de qualquer projeto, aplicamos um método estruturado em 5 etapas, nossa metodologia <strong>SMART</strong>, para entender exatamente onde está o problema. A tecnologia entra depois, sustentada pelo o UniConecta, a plataforma que conecta diagnóstico, decisão e operação.
+              Antes de qualquer projeto, aplicamos um método estruturado em 5 etapas, nossa metodologia <strong>SMART</strong>, para entender exatamente onde está o problema. A tecnologia entra depois, sustentada pelo UniConecta, a plataforma que conecta diagnóstico, decisão e operação.
             </p>
           </FadeIn>
 
@@ -264,7 +271,7 @@ export default function Discovery() {
               <CtaButton
                 text="Falar com um Especialista"
                 onClick={() => {
-                  const el = document.getElementById('discovery-form-section');
+                  const el = document.getElementById('como-trabalhamos-form-section');
                   el?.scrollIntoView({ behavior: 'smooth' });
                   setTimeout(() => {
                     document.getElementById('nome')?.focus();
@@ -322,7 +329,7 @@ export default function Discovery() {
           </div>
 
           <div className="flex items-center justify-start gap-2 mt-10 pl-1">
-            {[0, 1, 2, 3, 4].map((idx) => {
+            {Array.from({ length: logoCount }).map((_, idx) => {
               const isActive = activeDot === idx;
               return (
                 <button
@@ -340,7 +347,7 @@ export default function Discovery() {
       </section>
 
       {/* SEÇÃO 2: O PROBLEMA E O DIAGNÓSTICO */}
-      <section id="discovery-problems" className="py-20 lg:py-32 bg-white px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
+      <section id="como-trabalhamos-problems" className="py-20 lg:py-32 bg-white px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
             <div className="lg:col-span-7 text-left">
@@ -421,7 +428,6 @@ export default function Discovery() {
                   <h3 className="text-base sm:text-md font-bold text-brand-dark font-sans uppercase tracking-wider">Processos manuais e retrabalho</h3>
                   <p className="text-sm text-text-secondary leading-relaxed mt-2 font-normal font-sans">
                     Uma operação crítica totalmente dependente de papéis, e-mails e planilhas paralelas, altamente sujeita a falhas humanas.
-
                   </p>
                 </div>
               </div>
@@ -436,7 +442,6 @@ export default function Discovery() {
                   <h3 className="text-base sm:text-md font-bold text-brand-dark font-sans uppercase tracking-wider">Tomada de decisão no escuro</h3>
                   <p className="text-sm text-text-secondary leading-relaxed mt-2 font-normal font-sans">
                     Sem indicadores centralizados e visibilidade em tempo real, sua diretoria toma decisões estratégicas baseadas em "achismo" ou emoção.
-
                   </p>
                 </div>
               </div>
@@ -523,7 +528,7 @@ export default function Discovery() {
       </section>
 
       {/* SEÇÃO 5: ENTREGÁVEIS E RESULTADOS DO DISCOVERY */}
-      <section id="discovery-deliverables" className="py-20 lg:py-32 bg-brand-bg px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
+      <section id="como-trabalhamos-deliverables" className="py-20 lg:py-32 bg-brand-bg px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
         <div className="max-w-[1440px] mx-auto">
           <FadeIn delay={100}>
             <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-brand-cyan mb-5">
@@ -589,7 +594,7 @@ export default function Discovery() {
       </section>
 
       {/* SEÇÃO 6: MÉTRICAS E RESULTADOS DE TRANSFORMAÇÃO */}
-      <section id="discovery-metrics" className="py-20 bg-white px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
+      <section id="como-trabalhamos-metrics" className="py-20 bg-white px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
         <div className="max-w-[1440px] mx-auto">
           <FadeIn delay={100}>
             <Badge number="3" text="Métricas de Transformação" />
@@ -653,15 +658,15 @@ export default function Discovery() {
         </div>
       </section>
 
-      {/* SEÇÃO 5B: EXPLICAÇÃO E CONCEITO DO DISCOVERY */}
-      <section id="discovery-concept" className="py-20 lg:py-32 bg-[#F2F4F8] px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
+      {/* SEÇÃO 5B: EXPLICAÇÃO E CONCEITO DO DIAGNÓSTICO */}
+      <section id="como-trabalhamos-concept" className="py-20 lg:py-32 bg-[#F2F4F8] px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             <div className="lg:col-span-6 text-left">
               <FadeIn delay={100}>
                 <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-brand-cyan mb-5">
-                  <span>[ DISCOVERY ]</span>
+                  <span>[ COMO TRABALHAMOS ]</span>
                 </div>
               </FadeIn>
 
@@ -760,171 +765,8 @@ export default function Discovery() {
         </div>
       </section>
 
-      {/* SEÇÃO: PROVAS E RESULTADOS (CASE UNIMED AVARÉ) - COMENTADO TEMPORARIAMENTE
-      <section id="discovery-case" className="py-20 lg:py-32 bg-white px-6 lg:px-12 border-b border-border-subtle relative z-30">
-        <div className="max-w-[1440px] mx-auto">
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-            <div className="lg:col-span-7 text-left">
-              <FadeIn delay={100}>
-                <Badge number="4" text="Provas e Resultados" />
-              </FadeIn>
-
-              <FadeIn delay={200}>
-                <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-brand-cyan pl-5"
-                  style={{ fontSize: 'clamp(1.8rem, 4.2vw, 2.6rem)', color: '#001E38' }}>
-                  Estudo de Caso Real: Unimed Avaré
-                </h2>
-              </FadeIn>
-
-              <FadeIn delay={300} className="mt-4">
-                <p className="text-[17.6px] leading-[1.8] text-text-secondary font-normal font-sans">
-                  Não trabalhamos com promessas intangíveis. No projeto desenvolvido para a <strong>Unimed Avaré</strong>, o Discovery analisou <strong>20 áreas operacionais</strong>, mapeou <strong>57 processos críticos</strong> e identificou <strong>167 melhorias prioritárias</strong>, gerando eficiência imediata.
-                </p>
-              </FadeIn>
-
-              <FadeIn delay={400} className="mt-6">
-                <div className="border-l-4 border-brand-cyan pl-5 bg-brand-bg/50 p-4 rounded-r-[8px] text-left">
-                  <p className="text-xs sm:text-sm font-semibold text-brand-dark font-sans leading-relaxed">
-                    <strong>Nota de ROI:</strong> Para a Unimed Avaré, o potencial financeiro identificado gerou um <strong>ROI superior a 16x</strong> sobre o valor investido na contratação do Discovery.
-                  </p>
-                </div>
-              </FadeIn>
-            </div>
-
-            <div className="lg:col-span-5 w-full flex justify-center lg:justify-end relative">
-              <div className="w-full max-w-[460px] relative aspect-[4/3] flex items-center justify-center">
-                <div className="absolute -inset-4 bg-gradient-to-r from-brand-cyan/20 to-brand-blue/20 rounded-[30px] blur-3xl opacity-70 -z-10 animate-pulse" />
-
-                <div className="relative z-10 w-full h-full rounded-tl-[60px] rounded-br-[60px] rounded-tr-none rounded-bl-none overflow-hidden border border-border-subtle/30 shadow-xl bg-white">
-                  <img
-                    src="/assets/unimed_avare.webp"
-                    alt="Case de sucesso do Mapeamento Operacional na Unimed Avaré"
-                    className="w-full h-full object-cover rounded-tl-[60px] rounded-br-[60px] rounded-tr-none rounded-bl-none transition-transform duration-750 hover:scale-103 pointer-events-none"
-                  />
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 lg:-left-8 z-20">
-                  <div className="bg-white/90 backdrop-blur-md border border-brand-cyan/20 p-4 rounded-[12px] shadow-xl flex items-center gap-4 max-w-[245px] animate-float-slow transition-all hover:scale-105 duration-300">
-                    <div className="w-10 h-10 rounded-full bg-brand-cyan/15 flex items-center justify-center text-brand-cyan font-bold text-lg shadow-sm">
-                      ✓
-                    </div>
-                    <div className="text-left">
-                      <p className="text-[10px] uppercase font-bold tracking-widest text-[#00AECC]">[ Homologado ]</p>
-                      <p className="text-xs font-bold text-[#001E38] font-sans">ROI 16x Confirmado pelo Case</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <FadeIn delay={400} className="w-full mt-8 overflow-x-auto border border-border-subtle/80 rounded-2xl shadow-sm bg-brand-bg/25">
-            <table className="min-w-full divide-y divide-border-subtle/70 text-left font-sans">
-              <thead className="bg-[#001E38] text-white">
-                <tr>
-                  <th scope="col" className="px-6 py-4 text-xs font-bold uppercase tracking-wider">Área / Iniciativa Estratégica</th>
-                  <th scope="col" className="px-6 py-4 text-xs font-bold uppercase tracking-wider">Potencial de Economia Anual</th>
-                  <th scope="col" className="px-6 py-4 text-xs font-bold uppercase tracking-wider">Horas Recuperáveis / Ano</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-border-subtle/40 text-sm text-text-secondary font-medium">
-                <tr className="hover:bg-brand-cyan/5 transition-colors">
-                  <td className="px-6 py-4 font-bold text-brand-dark">Oncologia & Medicina Preventiva</td>
-                  <td className="px-6 py-4 text-brand-cyan font-bold">R$ 78.567 / ano</td>
-                  <td className="px-6 py-4">4.874 h / ano</td>
-                </tr>
-                <tr className="hover:bg-brand-cyan/5 transition-colors">
-                  <td className="px-6 py-4 font-bold text-brand-dark">Financeiro & Contas a Pagar</td>
-                  <td className="px-6 py-4 text-brand-cyan font-bold">R$ 45.944 / ano</td>
-                  <td className="px-6 py-4">2.850 h / ano</td>
-                </tr>
-                <tr className="hover:bg-brand-cyan/5 transition-colors">
-                  <td className="px-6 py-4 font-bold text-brand-dark">Centro Cirúrgico & CME</td>
-                  <td className="px-6 py-4 text-brand-cyan font-bold">R$ 18.708 / ano</td>
-                  <td className="px-6 py-4">1.161 h / ano</td>
-                </tr>
-                <tr className="hover:bg-brand-cyan/5 transition-colors">
-                  <td className="px-6 py-4 font-bold text-brand-dark">Ouvidoria & Tratamento de Demandas</td>
-                  <td className="px-6 py-4 text-brand-cyan font-bold">R$ 18.053 / ano</td>
-                  <td className="px-6 py-4">1.120 h / ano</td>
-                </tr>
-                <tr className="hover:bg-brand-cyan/5 transition-colors">
-                  <td className="px-6 py-4 font-bold text-brand-dark">Comercial (PJ/PF e Contratos)</td>
-                  <td className="px-6 py-4 text-brand-cyan font-bold">R$ 13.597 / ano</td>
-                  <td className="px-6 py-4">844 h / ano</td>
-                </tr>
-                <tr className="hover:bg-brand-cyan/5 transition-colors">
-                  <td className="px-6 py-4 font-bold text-brand-dark">Áreas de Apoio (9 setores integrados)</td>
-                  <td className="px-6 py-4 text-brand-cyan font-bold">R$ 19.399 / ano</td>
-                  <td className="px-6 py-4">1.202 h / ano</td>
-                </tr>
-                <tr className="bg-brand-cyan/10 font-bold text-brand-dark">
-                  <td className="px-6 py-4 uppercase">TOTAL IDENTIFICADO NO PROJETO</td>
-                  <td className="px-6 py-4 text-brand-cyan">R$ 251.873 / ano</td>
-                  <td className="px-6 py-4">15.625 h / ano</td>
-                </tr>
-              </tbody>
-            </table>
-          </FadeIn>
-
-        </div>
-      </section>
-      */ }
-
-      {/* SEÇÃO: PERGUNTAS FREQUENTES (FAQ) */}
-      <section id="discovery-faq" className="py-20 lg:py-32 bg-[#F2F4F8] px-6 lg:px-12 border-b border-border-subtle/50 relative z-30">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="flex flex-col items-center text-center mb-16">
-            <FadeIn delay={100}>
-              <div className="inline-flex items-center select-none font-sans uppercase text-[12px] tracking-[0.2em] font-bold text-brand-cyan mb-5">
-                <span>[ PERGUNTAS FREQUENTES ]</span>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={200}>
-              <h2 className="font-sans font-bold text-brand-dark leading-tight"
-                style={{ fontSize: 'clamp(1.75rem, 4vw, 2.6rem)', color: '#001E38' }}>
-                FAQ
-              </h2>
-            </FadeIn>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            {faqs.map((faq, index) => {
-              const isExpanded = faqExpanded === index;
-              return (
-                <FadeIn key={index} delay={150 * (index + 1)} className="w-full">
-                  <div className="bg-white border border-border-subtle/60 rounded-xl overflow-hidden shadow-xs hover:border-brand-cyan/20 transition-all duration-300">
-                    <button
-                      onClick={() => toggleFaq(index)}
-                      className="w-full px-6 py-5 flex items-center justify-between text-left font-sans font-bold text-brand-dark text-sm sm:text-base cursor-pointer hover:bg-brand-cyan/5 transition-colors focus:outline-none"
-                    >
-                      <span>{faq.q}</span>
-                      {isExpanded ? (
-                        <ChevronUp className="w-5 h-5 text-brand-cyan shrink-0 ml-4" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-text-secondary/70 shrink-0 ml-4" />
-                      )}
-                    </button>
-                    {isExpanded && (
-                      <div className="px-6 pb-6 pt-2 border-t border-border-subtle/30 text-left">
-                        <p className="text-sm text-text-secondary leading-relaxed font-sans font-normal">
-                          {faq.a}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
       {/* SEÇÃO: AVALIAÇÃO DE ELEGIBILIDADE E CONVERSÃO (CTA) */}
-      <section id="discovery-form-section" className="py-24 bg-white px-6 lg:px-12 relative z-40">
+      <section id="como-trabalhamos-form-section" className="py-24 bg-white px-6 lg:px-12 relative z-40">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -939,7 +781,6 @@ export default function Discovery() {
                 <h2 className="font-sans font-bold text-brand-dark leading-[1.15] tracking-[-0.01em] border-l-4 border-brand-cyan pl-5"
                   style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#001E38' }}>
                   Vamos descobrir, juntos, por onde começar
-
                 </h2>
               </FadeIn>
 
@@ -957,7 +798,7 @@ export default function Discovery() {
                 <div className="bg-[#F2F4F8]/80 border border-border-subtle/50 p-6 sm:p-10 rounded-[16px] w-full shadow-xs">
                   {submitted ? (
                     <div className="text-center py-10 flex flex-col items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center text-3xl font-bold animate-[bounce_1s_infinite]">
+                      <div className="w-16 h-16 rounded-full bg-brand-cyan/15 text-brand-cyan flex items-center justify-center text-3xl font-bold animate-[bounce_1s_infinite]">
                         ✓
                       </div>
                       <h3 className="font-sans font-bold text-[#001E38] text-xl">Inscrição Enviada!</h3>
@@ -967,7 +808,8 @@ export default function Discovery() {
                     </div>
                   ) : (
                     <ContactForm
-                      buttonText="ENVIAR DADOS OPERACIONAIS E AGENDAR REUNIÃO"
+                      buttonText="Falar com um Especialista"
+                      showPorte={false}
                       onSubmitSuccess={(values) => {
                         setSubmittedName(values.nome);
                         setSubmitted(true);
